@@ -96,7 +96,7 @@
                             l(b, f, g, c)
                         }
                     } catch (s) {
-                        alert(s), l(-1, s)
+                         
                     }
                 };
                 a.async ? 4 === h.readyState ? setTimeout(d) : h.onreadystatechange = d : d()
@@ -143,7 +143,7 @@
     g("focusin", "focus" + d);
     g("focusout", "blur" + d)
 })(jQuery, document, "click mousemove mouseup touchmove touchend", "outjsmol");
-"undefined" == typeof jQuery && alert("Note -- JSmoljQuery is required for JSmol, but it's not defined.");
+"undefined" == typeof jQuery;
 self.Jmol || (Jmol = {});
 Jmol._version || (Jmol = function (a) {
     var h = function (a) {
@@ -245,7 +245,7 @@ Jmol._version || (Jmol = function (a) {
         a._document = null
     });
     a.$ = function (b, a) {
-        null == b && alert(a + arguments.callee.caller.toString());
+        null == b;
         return h(a ? "#" + b._id + "_" + a : b)
     };
     a._$ = function (b) {
@@ -494,7 +494,7 @@ Jmol._version || (Jmol = function (a) {
     a._loadError = function (b) {
         a._ajaxDone();
         a.say("No 3D Model Found for this Compound :(");
-        //a.say("Error connecting to server: " + a._ajaxCall);
+        //a.say("say connecting to server: " + a._ajaxCall);
         null != b && b()
     };
     a._isDatabaseCall = function (b) {
@@ -710,7 +710,7 @@ Jmol._version || (Jmol = function (a) {
             f.hasOwnProperty("responseType") ? f.responseType = "arraybuffer" : f.overrideMimeType && f.overrideMimeType("text/plain; charset=x-user-defined")
         } catch (c) {
             return System.out.println("JSmolCore.js: synchronous binary file transfer is requested but not available"), a._alertNoBinary &&
-                !b && alert("JSmolCore.js: synchronous binary file transfer is requested but not available"), a._syncBinaryOK = !1
+                !b, a._syncBinaryOK = !1
         }
         return !0
     };
@@ -802,7 +802,7 @@ Jmol._version || (Jmol = function (a) {
             0 <= c.indexOf("|") && (c = c.split("|")[0]);
             return null == g ? null : a._getFileData(c, g)
         }
-        if (!a.featureDetection.hasFileReader) return b ? b.setData("Local file reading is not enabled in your browser", null, null, e, f) : alert("Local file reading is not enabled in your browser");
+        if (!a.featureDetection.hasFileReader) return b ? b.setData("Local file reading is not enabled in your browser", null, null, e, f) : '';
         f._localReader || (g = '<div id="ID" style="z-index:' + a._getZ(f, "fileOpener") + ';position:absolute;background:#E0E0E0;left:10px;top:10px"><div style="margin:5px 5px 5px 5px;"><button id="ID_loadurl">URL</button><input type="file" id="ID_files" /><button id="ID_loadfile">load</button><button id="ID_cancel">cancel</button></div><div>',
             a.$after("#" + f._id + "_appletdiv", g.replace(/ID/g, f._id + "_localReader")), f._localReader = a.$(f, "localReader"));
         a.$appEvent(f, "localReader_loadurl", "click");
@@ -821,7 +821,7 @@ Jmol._version || (Jmol = function (a) {
             try {
                 d.readAsArrayBuffer(c)
             } catch (g) {
-                alert("You must select a file first.")
+                
             }
         });
         a.$appEvent(f, "localReader_cancel", "click");
@@ -1584,7 +1584,7 @@ Jmol._grabberOptions = [
     [":", "PubChem(small molecules)"]
 ];
 Jmol.say = function (a) {
-    alert(a)
+    
 };
 Jmol._TMApplet = function (a, h, e) {
     this._uniqueId = ("" + Math.random()).substring(3);
@@ -1603,7 +1603,7 @@ Jmol._TMApplet._getApplet = function (a, h, e) {
     e || (e = !1);
     h || (h = {});
     Jmol._addDefaultInfo(h, {
-        color: "",
+        color: "white",
         width: 300,
         height: 300,
         addSelectionOptions: !1,
@@ -1631,7 +1631,7 @@ Jmol._TMApplet._getApplet = function (a, h, e) {
 };
 Jmol.getTMApplet = Jmol._TMApplet._getApplet;
 (function (a) {
-    a._CPK = "#FF1493 #F5F5F5 #D9FFFF #CC80FF #C2FF00 #FFB5B5 #909090 #3050F8 #FF0D0D #90E050 #B3E3F5 #AB5CF2 #8AFF00 #BFA6A6 #F0C8A0 #FF8000 #FFFF30 #1FF01F #80D1E3 #8F40D4 #3DFF00 #E6E6E6 #BFC2C7 #A6A6AB #8A99C7 #9C7AC7 #E06633 #F090A0 #50D050 #C88033 #7D80B0 #C28F8F #668F8F #BD80E3 #FFA100 #A62929 #5CB8D1 #702EB0 #00FF00 #94FFFF #94E0E0 #73C2C9 #54B5B5 #3B9E9E #248F8F #0A7D8C #006985 #C0C0C0 #FFD98F #A67573 #668080 #9E63B5 #D47A00 #940094 #429EB0 #57178F #00C900".split(" ");
+    a._CPK = "#FF1493 #F5f5f5 #D9FFFF #CC80FF #C2FF00 #FFB5B5 #909090 #3050F8 #FF0D0D #90E050 #B3E3F5 #AB5CF2 #8AFF00 #BFA6A6 #F0C8A0 #FF8000 #FFFF30 #1FF01F #80D1E3 #8F40D4 #3DFF00 #E6E6E6 #BFC2C7 #A6A6AB #8A99C7 #9C7AC7 #E06633 #F090A0 #50D050 #C88033 #7D80B0 #C28F8F #668F8F #BD80E3 #FFA100 #A62929 #5CB8D1 #702EB0 #00FF00 #94FFFF #94E0E0 #73C2C9 #54B5B5 #3B9E9E #248F8F #0A7D8C #006985 #C0C0C0 #FFD98F #A67573 #668080 #9E63B5 #D47A00 #940094 #429EB0 #57178F #00C900".split(" ");
     a._elem = "X H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge As Se Br Kr Rb Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe Cs Ba La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi Po At Rn Fr Ra Ac Th Pa U Np Pu Am Cm Bk Cf Es".split(" ");
     a._elemNo = {};
     var h = a.prototype;
@@ -1688,7 +1688,7 @@ Jmol.getTMApplet = Jmol._TMApplet._getApplet;
             a + "._createCanvas2d(false)\x3c/script>";
         g += Jmol._getWrapper(this, !1);
         d.addSelectionOptions && (g += Jmol._getGrabberOptions(this, ""));
-        Jmol._debugAlert && !Jmol._document && alert(g);
+        Jmol._debugAlert && !Jmol._document;
         this._code = Jmol._documentWrite(g)
     };
     h._createCanvas2d = function (a) {
@@ -1724,7 +1724,7 @@ Jmol.getTMApplet = Jmol._TMApplet._getApplet;
     h.__loadModel = function (a) {
         this._spin(!1);
         "''" == a && (a = this._mol);
-        a ? (this._parse(a), this._initParams(), this._draw(), this._showInfo(!1), this.doSpin && this._spin(!0)) : alert("No model data.")
+        a ? (this._parse(a), this._initParams(), this._draw(), this._showInfo(!1), this.doSpin && this._spin(!0)) : ''
     };
     h._showInfo = function (a) {
         Jmol.$html(Jmol.$(this, "infoheaderspan"), this._infoHeader);

@@ -104,7 +104,7 @@ export default class App extends React.Component {
             <head>
               <meta charset="utf-8">
               <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-              <script type="text/javascript" src="https://www.dropbox.com/s/ufceqq8wrodt5fp/JSmol.min.nojq.js"></script>
+              <script type="text/javascript" src="http://yourjavascript.com/44817082211/jsmol-lite-nojq.js"></script>
               <style>
            
               </style>
@@ -112,9 +112,9 @@ export default class App extends React.Component {
                 var Info;
                 ;(function() {
                 Info = {
+                  color: "fff",
                   width: 900,
                   height: 900,
-                  color: "white",
                   addSelectionOptions: false,
                   shadeAtoms: true,
                   serverURL: "https://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php",
@@ -123,9 +123,9 @@ export default class App extends React.Component {
                   defaultModel: ":` + this.state.cid + `",
                   bondWidth: 4,
                   zoomScaling: 1.5,
-                  pinchScaling: 2.0,
+                  pinchScaling: 5.0,
                   mouseDragFactor: 1,
-                  touchDragFactor: 7,
+                  touchDragFactor: 5,
                   multipleBondSpacing: 4,
                   debug: false
                 }
@@ -140,15 +140,14 @@ export default class App extends React.Component {
           </html>
       `
       return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-around', height: 1000}}>
           <View style={styles.container}>
             <TextInput
               style={styles.fontStyle}
               placeholder='Compound Name'
               onSubmitEditing={({ nativeEvent }) => this.getCID(nativeEvent.text)}
             />
-            
-            <Text>{this.state.compound}</Text>
+            <Text style={{ flex: 1, textAlign: 'center' }}>{this.state.compound}</Text>
           </View>
           <WebView
             style={styles.modelViewer}
@@ -157,10 +156,6 @@ export default class App extends React.Component {
             bounce={ false }
           />
         </View>
-        /* <WebView
-          source={{ uri: 'http://3dmol.csb.pitt.edu/viewer.html?cid=' + this.state.cid + '&select=all&style=line;sphere:radius~0.1' }}
-          style={{ flex: 1, marginTop: -100 }}
-        /> */
 
         /* <View style={styles.container}>
           <TextInput
@@ -194,7 +189,8 @@ const styles = StyleSheet.create({
     top: 100,
   },
   modelViewer: {
-    top: -100,
+    flex: 1,
+    top: -200,
     marginLeft: 25,
   }
 });
