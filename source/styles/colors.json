@@ -1,0 +1,438 @@
+{
+"1": {
+        "name": "H",
+        "hexColor": "FFFFFF"
+    },
+"2": {
+        "name": "He",
+        "hexColor": "D9FFFF"
+    },
+"3": {
+        "name": "Li",
+        "hexColor": "CC80FF"
+    },
+"4": {
+        "name": "Be",
+        "hexColor": "C2FF00"
+    },
+"5": {
+        "name": "B",
+        "hexColor": "FFB5B5"
+    },
+"6": {
+        "name": "C",
+        "hexColor": "909090"
+    },
+"7": {
+        "name": "N",
+        "hexColor": "3050F8"
+    },
+"8": {
+        "name": "O",
+        "hexColor": "FF0D0D"
+    },
+"9": {
+        "name": "F",
+        "hexColor": "90E050"
+    },
+"10": {
+        "name": "Ne",
+        "hexColor": "B3E3F5"
+    },
+"11": {
+        "name": "Na",
+        "hexColor": "AB5CF2"
+    },
+"12": {
+        "name": "Mg",
+        "hexColor": "8AFF00"
+    },
+"13": {
+        "name": "Al",
+        "hexColor": "BFA6A6"
+    },
+"14": {
+        "name": "Si",
+        "hexColor": "F0C8A0"
+    },
+"15": {
+        "name": "P",
+        "hexColor": "FF8000"
+    },
+"16": {
+        "name": "S",
+        "hexColor": "FFFF30"
+    },
+"17": {
+        "name": "Cl",
+        "hexColor": "1FF01F"
+    },
+"18": {
+        "name": "Ar",
+        "hexColor": "80D1E3"
+    },
+"19": {
+        "name": "K",
+        "hexColor": "8F40D4"
+    },
+"20": {
+        "name": "Ca",
+        "hexColor": "3DFF00"
+    },
+"21": {
+        "name": "Sc",
+        "hexColor": "E6E6E6"
+    },
+"22": {
+        "name": "Ti",
+        "hexColor": "BFC2C7"
+    },
+"23": {
+        "name": "V",
+        "hexColor": "A6A6AB"
+    },
+"24": {
+        "name": "Cr",
+        "hexColor": "8A99C7"
+    },
+"25": {
+        "name": "Mn",
+        "hexColor": "9C7AC7"
+    },
+"26": {
+        "name": "Fe",
+        "hexColor": "E06633"
+    },
+"27": {
+        "name": "Co",
+        "hexColor": "F090A0"
+    },
+"28": {
+        "name": "Ni",
+        "hexColor": "50D050"
+    },
+"29": {
+        "name": "Cu",
+        "hexColor": "C88033"
+    },
+"30": {
+        "name": "Zn",
+        "hexColor": "7D80B0"
+    },
+"31": {
+        "name": "Ga",
+        "hexColor": "C28F8F"
+    },
+"32": {
+        "name": "Ge",
+        "hexColor": "668F8F"
+    },
+"33": {
+        "name": "As",
+        "hexColor": "BD80E3"
+    },
+"34": {
+        "name": "Se",
+        "hexColor": "FFA100"
+    },
+"35": {
+        "name": "Br",
+        "hexColor": "A62929"
+    },
+"36": {
+        "name": "Kr",
+        "hexColor": "5CB8D1"
+    },
+"37": {
+        "name": "Rb",
+        "hexColor": "702EB0"
+    },
+"38": {
+        "name": "Sr",
+        "hexColor": "00FF00"
+    },
+"39": {
+        "name": "Y",
+        "hexColor": "94FFFF"
+    },
+"40": {
+        "name": "Zr",
+        "hexColor": "94E0E0"
+    },
+"41": {
+        "name": "Nb",
+        "hexColor": "73C2C9"
+    },
+"42": {
+        "name": "Mo",
+        "hexColor": "54B5B5"
+    },
+"43": {
+        "name": "Tc",
+        "hexColor": "3B9E9E"
+    },
+"44": {
+        "name": "Ru",
+        "hexColor": "248F8F"
+    },
+"45": {
+        "name": "Rh",
+        "hexColor": "0A7D8C"
+    },
+"46": {
+        "name": "Pd",
+        "hexColor": "006985"
+    },
+"47": {
+        "name": "Ag",
+        "hexColor": "C0C0C0"
+    },
+"48": {
+        "name": "Cd",
+        "hexColor": "FFD98F"
+    },
+"49": {
+        "name": "In",
+        "hexColor": "A67573"
+    },
+"50": {
+        "name": "Sn",
+        "hexColor": "668080"
+    },
+"51": {
+        "name": "Sb",
+        "hexColor": "9E63B5"
+    },
+"52": {
+        "name": "Te",
+        "hexColor": "D47A00"
+    },
+"53": {
+        "name": "I",
+        "hexColor": "940094"
+    },
+"54": {
+        "name": "Xe",
+        "hexColor": "429EB0"
+    },
+"55": {
+        "name": "Cs",
+        "hexColor": "57178F"
+    },
+"56": {
+        "name": "Ba",
+        "hexColor": "00C900"
+    },
+"57": {
+        "name": "La",
+        "hexColor": "70"
+    },
+"58": {
+        "name": "Ce",
+        "hexColor": "FFFFC7"
+    },
+"59": {
+        "name": "Pr",
+        "hexColor": "D9FFC7"
+    },
+"60": {
+        "name": "Nd",
+        "hexColor": "C7FFC7"
+    },
+"61": {
+        "name": "Pm",
+        "hexColor": "A3FFC7"
+    },
+"62": {
+        "name": "Sm",
+        "hexColor": "8FFFC7"
+    },
+"63": {
+        "name": "Eu",
+        "hexColor": "61FFC7"
+    },
+"64": {
+        "name": "Gd",
+        "hexColor": "45FFC7"
+    },
+"65": {
+        "name": "Tb",
+        "hexColor": "30FFC7"
+    },
+"66": {
+        "name": "Dy",
+        "hexColor": "1FFFC7"
+    },
+"67": {
+        "name": "Ho",
+        "hexColor": "00FF9C"
+    },
+"68": {
+        "name": "Er",
+        "hexColor": "00E675"
+    },
+"69": {
+        "name": "Tm",
+        "hexColor": "00D452"
+    },
+"70": {
+        "name": "Yb",
+        "hexColor": "00BF38"
+    },
+"71": {
+        "name": "Lu",
+        "hexColor": "00AB24"
+    },
+"72": {
+        "name": "Hf",
+        "hexColor": "4DA6FF"
+    },
+"73": {
+        "name": "Ta",
+        "hexColor": "4DA6FF"
+    },
+"74": {
+        "name": "W",
+        "hexColor": "2194D6"
+    },
+"75": {
+        "name": "Re",
+        "hexColor": "267DAB"
+    },
+"76": {
+        "name": "Os",
+        "hexColor": "266696"
+    },
+"77": {
+        "name": "Ir",
+        "hexColor": "175487"
+    },
+"78": {
+        "name": "Pt",
+        "hexColor": "D0D0E0"
+    },
+"79": {
+        "name": "Au",
+        "hexColor": "FFD123"
+    },
+"80": {
+        "name": "Hg",
+        "hexColor": "B8B8D0"
+    },
+"81": {
+        "name": "Tl",
+        "hexColor": "A6544D"
+    },
+"82": {
+        "name": "Pb",
+        "hexColor": "575961"
+    },
+"83": {
+        "name": "Bi",
+        "hexColor": "9E4FB5"
+    },
+"84": {
+        "name": "Po",
+        "hexColor": "AB5C00"
+    },
+"85": {
+        "name": "At",
+        "hexColor": "754F45"
+    },
+"86": {
+        "name": "Rn",
+        "hexColor": "428296"
+    },
+"87": {
+        "name": "Fr",
+        "hexColor": "420066"
+    },
+"88": {
+        "name": "Ra",
+        "hexColor": "007D00"
+    },
+"89": {
+        "name": "Ac",
+        "hexColor": "70ABFA"
+    },
+"90": {
+        "name": "Th",
+        "hexColor": "00BAFF"
+    },
+"91": {
+        "name": "Pa",
+        "hexColor": "00A1FF"
+    },
+"92": {
+        "name": "U",
+        "hexColor": "008FFF"
+    },
+"93": {
+        "name": "Np",
+        "hexColor": "0080FF"
+    },
+"94": {
+        "name": "Pu",
+        "hexColor": "006BFF"
+    },
+"95": {
+        "name": "Am",
+        "hexColor": "545CF2"
+    },
+"96": {
+        "name": "Cm",
+        "hexColor": "785CE3"
+    },
+"97": {
+        "name": "Bk",
+        "hexColor": "8A4FE3"
+    },
+"98": {
+        "name": "Cf",
+        "hexColor": "A136D4"
+    },
+"99": {
+        "name": "Es",
+        "hexColor": "B31FD4"
+    },
+"100": {
+        "name": "Fm",
+        "hexColor": "B31FBA"
+    },
+"101": {
+        "name": "Md",
+        "hexColor": "B30DA6"
+    },
+"102": {
+        "name": "No",
+        "hexColor": "BD0D87"
+    },
+"103": {
+        "name": "Lr",
+        "hexColor": "C70066"
+    },
+"104": {
+        "name": "Rf",
+        "hexColor": "CC0059"
+    },
+"105": {
+        "name": "Db",
+        "hexColor": "D1004F"
+    },
+"106": {
+        "name": "Sg",
+        "hexColor": "D90045"
+    },
+"107": {
+        "name": "Bh",
+        "hexColor": "E00038"
+    },
+"108": {
+        "name": "Hs",
+        "hexColor": "E6002E"
+    },
+"109": {
+        "name": "Mt",
+        "hexColor": "EB0026"
+}
+}
