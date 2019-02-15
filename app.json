@@ -3,9 +3,8 @@
     "name": "Chemodel 3D and AR",
     "description": "View chemical compounds in 3D and AR",
     "slug": "chemodel",
-    "privacy": "public",
+    "privacy": "unlisted",
     "sdkVersion": "32.0.0",
-    "platforms": ["ios"],
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/chemodel_icon.png",
@@ -15,8 +14,13 @@
       "backgroundColor": "#212121"
     },
     "ios": {
+      "icon": "./assets/chemodel_icon.png",
       "supportsTablet": true,
-      "bundleIdentifier": "com.brandonchong.chemodel"
+      "bundleIdentifier": "com.brandonchong.chemmodel",
+      "buildNumber": "1.0.0.1",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to generate chemical compound models in augmented reality."
+      },
     }
   }
 }

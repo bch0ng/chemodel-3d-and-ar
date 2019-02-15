@@ -13,8 +13,9 @@ import { AppRegistry,
          WebView } from 'react-native';
 import SearchBar from '../components/search';
 import JSMol from '../components/jsmol';
-import JSMolAR from '../components/jsmol.ar';
+import JSMolAR from '../components/jsmolAR';
 import styles from '../styles/style';
+import { AR } from 'expo';
 const atomColors = require('../styles/colors.json');
 
 export default class MainPage extends Component {
@@ -72,24 +73,26 @@ export default class MainPage extends Component {
                                         { this.state.visible3D && this.props.navigation.state.params.model3DExists ? "2D" : "3D" }
                                     </Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={ styles.button }
-                                    disabled={ !this.props.navigation.state.params.model3DExists }
-                                    onPress={ () =>
-                                        this.props.navigation.navigate('JSMolAR', {
-                                            cid: this.props.navigation.state.params.cid,
-                                            compound: this.props.navigation.state.params.compound,
-                                            formula: this.props.navigation.state.params.formula,
-                                            x: this.props.navigation.state.params.x,
-                                            y: this.props.navigation.state.params.y,
-                                            z: this.props.navigation.state.params.z,
-                                            aid1: this.props.navigation.state.params.aid1,
-                                            aid2: this.props.navigation.state.params.aid2,
-                                            numBonds: this.props.navigation.state.params.numBonds,
-                                            elements: this.props.navigation.state.params.elements
-                                        }) 
-                                    }>
-                                    <Text style={ styles.buttonText }>AR</Text>
-                                </TouchableOpacity>
+                                { AR.isAvailable() &&
+                                    <TouchableOpacity style={ styles.button }
+                                        disabled={ !this.props.navigation.state.params.model3DExists }
+                                        onPress={ () =>
+                                            this.props.navigation.navigate('JSMolAR', {
+                                                cid: this.props.navigation.state.params.cid,
+                                                compound: this.props.navigation.state.params.compound,
+                                                formula: this.props.navigation.state.params.formula,
+                                                x: this.props.navigation.state.params.x,
+                                                y: this.props.navigation.state.params.y,
+                                                z: this.props.navigation.state.params.z,
+                                                aid1: this.props.navigation.state.params.aid1,
+                                                aid2: this.props.navigation.state.params.aid2,
+                                                numBonds: this.props.navigation.state.params.numBonds,
+                                                elements: this.props.navigation.state.params.elements
+                                            }) 
+                                        }>
+                                        <Text style={ styles.buttonText }>AR</Text>
+                                    </TouchableOpacity>
+                                }
                             </View>
                         }
                         <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-around' }}>
@@ -156,24 +159,26 @@ export default class MainPage extends Component {
                                                 { this.state.visible3D && this.props.navigation.state.params.model3DExists ? "2D" : "3D" }
                                             </Text>
                                         </TouchableOpacity>
-                                        <TouchableOpacity style={ [styles.button, { width: '100%', margin: 25 }] }
-                                            disabled={ !this.props.navigation.state.params.model3DExists }
-                                            onPress={ () =>
-                                                this.props.navigation.navigate('JSMolAR', {
-                                                    cid: this.props.navigation.state.params.cid,
-                                                    compound: this.props.navigation.state.params.compound,
-                                                    formula: this.props.navigation.state.params.formula,
-                                                    x: this.props.navigation.state.params.x,
-                                                    y: this.props.navigation.state.params.y,
-                                                    z: this.props.navigation.state.params.z,
-                                                    aid1: this.props.navigation.state.params.aid1,
-                                                    aid2: this.props.navigation.state.params.aid2,
-                                                    numBonds: this.props.navigation.state.params.numBonds,
-                                                    elements: this.props.navigation.state.params.elements
-                                                }) 
-                                            }>
-                                            <Text style={ styles.buttonText }>AR</Text>
-                                        </TouchableOpacity>
+                                        { AR.isAvailable() &&
+                                            <TouchableOpacity style={ [styles.button, { width: '100%', margin: 25 }] }
+                                                disabled={ !this.props.navigation.state.params.model3DExists }
+                                                onPress={ () =>
+                                                    this.props.navigation.navigate('JSMolAR', {
+                                                        cid: this.props.navigation.state.params.cid,
+                                                        compound: this.props.navigation.state.params.compound,
+                                                        formula: this.props.navigation.state.params.formula,
+                                                        x: this.props.navigation.state.params.x,
+                                                        y: this.props.navigation.state.params.y,
+                                                        z: this.props.navigation.state.params.z,
+                                                        aid1: this.props.navigation.state.params.aid1,
+                                                        aid2: this.props.navigation.state.params.aid2,
+                                                        numBonds: this.props.navigation.state.params.numBonds,
+                                                        elements: this.props.navigation.state.params.elements
+                                                    }) 
+                                                }>
+                                                <Text style={ styles.buttonText }>AR</Text>
+                                            </TouchableOpacity>
+                                        }
                                     </View>
                                 }
                                 <View style={{ flexDirection: 'column', flex: 1 }}>

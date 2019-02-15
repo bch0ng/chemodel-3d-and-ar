@@ -15,7 +15,7 @@ import { createStackNavigator, createAppContainer } from "react-navigation";
 //import Main from './source/Main';
 import MainPage from './source/screens/main';
 import SearchBar from './source/components/search';
-import JSMolAR from './source/components/jsmol.ar';
+import JSMolAR from './source/components/jsmolAR';
 
 class HomePage extends Component {
   static navigationOptions = {

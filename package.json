@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "expo": "^32.0.0",
+    "expo-cli": "^2.10.1",
     "expo-graphics": "^1.0.2",
     "expo-three": "^3.0.0-alpha.6",
     "react": "16.5.0",
