@@ -2,29 +2,26 @@ import {StyleSheet, Dimensions} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    flex: 0.25,
+    flex: 0.5,
     backgroundColor: '#212121',
     alignItems: 'center',
-    marginTop: 100
+    marginTop: 50
   },
   button: {
-    backgroundColor: '#fff',
-    width: '33.33%',
+    borderColor: '#EF9A9A',
+    borderWidth: 2,
+    backgroundColor: 'transparent',
+    width: '20%',
     borderRadius: 5,
     padding: 15,
   },
   buttonText: {
-    color: '#000',
+    color: '#EF9A9A',
     textAlign: 'center'
   },
   text: {
-    color: '#C5E1A5',
+    color: '#fff',
     textAlign: 'center'
-  },
-  search: {
-    color: '#DA70D6',
-    fontSize: 50,
-    textAlign: 'center',
   },
   loader: {
     top: 100,

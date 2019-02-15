@@ -1,438 +1,824 @@
 {
-"1": {
-        "name": "H",
-        "hexColor": "FFFFFF"
-    },
-"2": {
-        "name": "He",
-        "hexColor": "D9FFFF"
-    },
-"3": {
-        "name": "Li",
-        "hexColor": "CC80FF"
-    },
-"4": {
-        "name": "Be",
-        "hexColor": "C2FF00"
-    },
-"5": {
-        "name": "B",
-        "hexColor": "FFB5B5"
-    },
-"6": {
-        "name": "C",
-        "hexColor": "909090"
-    },
-"7": {
-        "name": "N",
-        "hexColor": "3050F8"
-    },
-"8": {
-        "name": "O",
-        "hexColor": "FF0D0D"
-    },
-"9": {
-        "name": "F",
-        "hexColor": "90E050"
-    },
-"10": {
-        "name": "Ne",
-        "hexColor": "B3E3F5"
-    },
-"11": {
-        "name": "Na",
-        "hexColor": "AB5CF2"
-    },
-"12": {
-        "name": "Mg",
-        "hexColor": "8AFF00"
-    },
-"13": {
-        "name": "Al",
-        "hexColor": "BFA6A6"
-    },
-"14": {
-        "name": "Si",
-        "hexColor": "F0C8A0"
-    },
-"15": {
-        "name": "P",
-        "hexColor": "FF8000"
-    },
-"16": {
-        "name": "S",
-        "hexColor": "FFFF30"
-    },
-"17": {
-        "name": "Cl",
-        "hexColor": "1FF01F"
-    },
-"18": {
-        "name": "Ar",
-        "hexColor": "80D1E3"
-    },
-"19": {
-        "name": "K",
-        "hexColor": "8F40D4"
-    },
-"20": {
-        "name": "Ca",
-        "hexColor": "3DFF00"
-    },
-"21": {
-        "name": "Sc",
-        "hexColor": "E6E6E6"
-    },
-"22": {
-        "name": "Ti",
-        "hexColor": "BFC2C7"
-    },
-"23": {
-        "name": "V",
-        "hexColor": "A6A6AB"
-    },
-"24": {
-        "name": "Cr",
-        "hexColor": "8A99C7"
-    },
-"25": {
-        "name": "Mn",
-        "hexColor": "9C7AC7"
-    },
-"26": {
-        "name": "Fe",
-        "hexColor": "E06633"
-    },
-"27": {
-        "name": "Co",
-        "hexColor": "F090A0"
-    },
-"28": {
-        "name": "Ni",
-        "hexColor": "50D050"
-    },
-"29": {
-        "name": "Cu",
-        "hexColor": "C88033"
-    },
-"30": {
-        "name": "Zn",
-        "hexColor": "7D80B0"
-    },
-"31": {
-        "name": "Ga",
-        "hexColor": "C28F8F"
-    },
-"32": {
-        "name": "Ge",
-        "hexColor": "668F8F"
-    },
-"33": {
-        "name": "As",
-        "hexColor": "BD80E3"
-    },
-"34": {
-        "name": "Se",
-        "hexColor": "FFA100"
-    },
-"35": {
-        "name": "Br",
-        "hexColor": "A62929"
-    },
-"36": {
-        "name": "Kr",
-        "hexColor": "5CB8D1"
-    },
-"37": {
-        "name": "Rb",
-        "hexColor": "702EB0"
-    },
-"38": {
-        "name": "Sr",
-        "hexColor": "00FF00"
-    },
-"39": {
-        "name": "Y",
-        "hexColor": "94FFFF"
-    },
-"40": {
-        "name": "Zr",
-        "hexColor": "94E0E0"
-    },
-"41": {
-        "name": "Nb",
-        "hexColor": "73C2C9"
-    },
-"42": {
-        "name": "Mo",
-        "hexColor": "54B5B5"
-    },
-"43": {
-        "name": "Tc",
-        "hexColor": "3B9E9E"
-    },
-"44": {
-        "name": "Ru",
-        "hexColor": "248F8F"
-    },
-"45": {
-        "name": "Rh",
-        "hexColor": "0A7D8C"
-    },
-"46": {
-        "name": "Pd",
-        "hexColor": "006985"
-    },
-"47": {
-        "name": "Ag",
-        "hexColor": "C0C0C0"
-    },
-"48": {
-        "name": "Cd",
-        "hexColor": "FFD98F"
-    },
-"49": {
-        "name": "In",
-        "hexColor": "A67573"
-    },
-"50": {
-        "name": "Sn",
-        "hexColor": "668080"
-    },
-"51": {
-        "name": "Sb",
-        "hexColor": "9E63B5"
-    },
-"52": {
-        "name": "Te",
-        "hexColor": "D47A00"
-    },
-"53": {
-        "name": "I",
-        "hexColor": "940094"
-    },
-"54": {
-        "name": "Xe",
-        "hexColor": "429EB0"
-    },
-"55": {
-        "name": "Cs",
-        "hexColor": "57178F"
-    },
-"56": {
-        "name": "Ba",
-        "hexColor": "00C900"
-    },
-"57": {
-        "name": "La",
-        "hexColor": "70"
-    },
-"58": {
-        "name": "Ce",
-        "hexColor": "FFFFC7"
-    },
-"59": {
-        "name": "Pr",
-        "hexColor": "D9FFC7"
-    },
-"60": {
-        "name": "Nd",
-        "hexColor": "C7FFC7"
-    },
-"61": {
-        "name": "Pm",
-        "hexColor": "A3FFC7"
-    },
-"62": {
-        "name": "Sm",
-        "hexColor": "8FFFC7"
-    },
-"63": {
-        "name": "Eu",
-        "hexColor": "61FFC7"
-    },
-"64": {
-        "name": "Gd",
-        "hexColor": "45FFC7"
-    },
-"65": {
-        "name": "Tb",
-        "hexColor": "30FFC7"
-    },
-"66": {
-        "name": "Dy",
-        "hexColor": "1FFFC7"
-    },
-"67": {
-        "name": "Ho",
-        "hexColor": "00FF9C"
-    },
-"68": {
-        "name": "Er",
-        "hexColor": "00E675"
-    },
-"69": {
-        "name": "Tm",
-        "hexColor": "00D452"
-    },
-"70": {
-        "name": "Yb",
-        "hexColor": "00BF38"
-    },
-"71": {
-        "name": "Lu",
-        "hexColor": "00AB24"
-    },
-"72": {
-        "name": "Hf",
-        "hexColor": "4DA6FF"
-    },
-"73": {
-        "name": "Ta",
-        "hexColor": "4DA6FF"
-    },
-"74": {
-        "name": "W",
-        "hexColor": "2194D6"
-    },
-"75": {
-        "name": "Re",
-        "hexColor": "267DAB"
-    },
-"76": {
-        "name": "Os",
-        "hexColor": "266696"
-    },
-"77": {
-        "name": "Ir",
-        "hexColor": "175487"
-    },
-"78": {
-        "name": "Pt",
-        "hexColor": "D0D0E0"
-    },
-"79": {
-        "name": "Au",
-        "hexColor": "FFD123"
-    },
-"80": {
-        "name": "Hg",
-        "hexColor": "B8B8D0"
-    },
-"81": {
-        "name": "Tl",
-        "hexColor": "A6544D"
-    },
-"82": {
-        "name": "Pb",
-        "hexColor": "575961"
-    },
-"83": {
-        "name": "Bi",
-        "hexColor": "9E4FB5"
-    },
-"84": {
-        "name": "Po",
-        "hexColor": "AB5C00"
-    },
-"85": {
-        "name": "At",
-        "hexColor": "754F45"
-    },
-"86": {
-        "name": "Rn",
-        "hexColor": "428296"
-    },
-"87": {
-        "name": "Fr",
-        "hexColor": "420066"
-    },
-"88": {
-        "name": "Ra",
-        "hexColor": "007D00"
-    },
-"89": {
-        "name": "Ac",
-        "hexColor": "70ABFA"
-    },
-"90": {
-        "name": "Th",
-        "hexColor": "00BAFF"
-    },
-"91": {
-        "name": "Pa",
-        "hexColor": "00A1FF"
-    },
-"92": {
-        "name": "U",
-        "hexColor": "008FFF"
-    },
-"93": {
-        "name": "Np",
-        "hexColor": "0080FF"
-    },
-"94": {
-        "name": "Pu",
-        "hexColor": "006BFF"
-    },
-"95": {
-        "name": "Am",
-        "hexColor": "545CF2"
-    },
-"96": {
-        "name": "Cm",
-        "hexColor": "785CE3"
-    },
-"97": {
-        "name": "Bk",
-        "hexColor": "8A4FE3"
-    },
-"98": {
-        "name": "Cf",
-        "hexColor": "A136D4"
-    },
-"99": {
-        "name": "Es",
-        "hexColor": "B31FD4"
-    },
-"100": {
-        "name": "Fm",
-        "hexColor": "B31FBA"
-    },
-"101": {
-        "name": "Md",
-        "hexColor": "B30DA6"
-    },
-"102": {
-        "name": "No",
-        "hexColor": "BD0D87"
-    },
-"103": {
-        "name": "Lr",
-        "hexColor": "C70066"
-    },
-"104": {
-        "name": "Rf",
-        "hexColor": "CC0059"
-    },
-"105": {
-        "name": "Db",
-        "hexColor": "D1004F"
-    },
-"106": {
-        "name": "Sg",
-        "hexColor": "D90045"
-    },
-"107": {
-        "name": "Bh",
-        "hexColor": "E00038"
-    },
-"108": {
-        "name": "Hs",
-        "hexColor": "E6002E"
-    },
-"109": {
-        "name": "Mt",
-        "hexColor": "EB0026"
-}
+    "1": {
+        "symbol": "H",
+        "name": "Hydrogen",
+        "hexColor": "FFFFFF",
+        "mass": 1.008,
+        "category": "Other Nonmetal"
+    },
+    "2": {
+        "symbol": "He",
+        "name": "Helium",
+        "hexColor": "D9FFFF",
+        "mass": 4.0026
+    },
+    "3": {
+        "symbol": "Li",
+        "name": "Lithium",
+        "hexColor": "CC80FF",
+        "mass": 6.94
+    },
+    "4": {
+        "symbol": "Be",
+        "name": "Beryllium",
+        "hexColor": "C2FF00",
+        "mass": 9.0122
+    },
+    "5": {
+        "symbol": "B",
+        "name": "Boron",
+        "hexColor": "FFB5B5",
+        "mass": 10.81
+    },
+    "6": {
+        "symbol": "C",
+        "name": "Carbon",
+        "hexColor": "909090",
+        "mass": 12.011,
+        "category": "Other Nonmetal"
+    },
+    "7": {
+        "symbol": "N",
+        "name": "Nitrogen",
+        "hexColor": "3050F8",
+        "mass": 14.007,
+        "category": "Other Nonmetal"
+    },
+    "8": {
+        "symbol": "O",
+        "name": "Oxygen",
+        "hexColor": "FF0D0D",
+        "mass": 15.999,
+        "category": "Other Nonmetal"
+    },
+    "9": {
+        "symbol": "F",
+        "name": "Fluorine",
+        "hexColor": "90E050",
+        "mass": 18.998,
+        "category": "Other Nonmetal"
+    },
+    "10": {
+        "symbol": "Ne",
+        "name": "Neon",
+        "hexColor": "B3E3F5",
+        "mass": 20.180,
+        "category": "Noble Gas"
+    },
+    "11": {
+        "symbol": "Na",
+        "name": "Sodium",
+        "hexColor": "AB5CF2",
+        "mass": 22.990,
+        "category": "Alkali Metal"
+    },
+    "12": {
+        "symbol": "Mg",
+        "name": "Magnesium",
+        "hexColor": "8AFF00",
+        "mass": 24.305,
+        "category": "Alkaline Earth Metal"
+    },
+    "13": {
+        "symbol": "Al",
+        "name": "Aluminum",
+        "hexColor": "BFA6A6",
+        "mass": 26.982,
+        "category": "Post-Transition Metal"
+    },
+    "14": {
+        "symbol": "Si",
+        "name": "Silicon",
+        "hexColor": "F0C8A0",
+        "mass": 28.085,
+        "category": "Post-Transition Metal"
+    },
+    "15": {
+        "symbol": "P",
+        "name": "Phosphorus",
+        "hexColor": "FF8000",
+        "mass": 30.974,
+        "category": "Other Nonmetal"
+    },
+    "16": {
+        "symbol": "S",
+        "name": "Sulfur",
+        "hexColor": "FFFF30",
+        "mass": 32.06,
+        "category": "Other Nonmetal"
+    },
+    "17": {
+        "symbol": "Cl",
+        "name": "Chlorine",
+        "hexColor": "1FF01F",
+        "mass": 35.45,
+        "category": "Other Nonmetal"
+    },
+    "18": {
+        "symbol": "Ar",
+        "name": "Argon",
+        "hexColor": "80D1E3",
+        "mass": 39.948,
+        "category": "Noble Gas"
+    },
+    "19": {
+        "symbol": "K",
+        "name": "Potassium",
+        "hexColor": "8F40D4",
+        "mass": 39.098,
+        "category": "Alkali Metal"
+    },
+    "20": {
+        "symbol": "Ca",
+        "name": "Calcium",
+        "hexColor": "3DFF00",
+        "mass": 40.078,
+        "category": "Alkaline Earth Metal"
+    },
+    "21": {
+        "symbol": "Sc",
+        "name": "Scandium",
+        "hexColor": "E6E6E6",
+        "mass": 44.956,
+        "category": "Transition Metal"
+    },
+    "22": {
+        "symbol": "Ti",
+        "name": "Titanium",
+        "hexColor": "BFC2C7",
+        "mass": 47.867,
+        "category": "Transition Metal"
+    },
+    "23": {
+        "symbol": "V",
+        "name": "Vanadium",
+        "hexColor": "A6A6AB",
+        "mass": 50.942,
+        "category": "Transition Metal"
+    },
+    "24": {
+        "symbol": "Cr",
+        "name": "Chromium",
+        "hexColor": "8A99C7",
+        "mass": 51.996,
+        "category": "Transition Metal"
+    },
+    "25": {
+        "symbol": "Mn",
+        "name": "Manganese",
+        "hexColor": "9C7AC7",
+        "mass": 54.938,
+        "category": "Transition Metal"
+    },
+    "26": {
+        "symbol": "Fe",
+        "name": "Iron",
+        "hexColor": "E06633",
+        "mass": 55.845,
+        "category": "Transition Metal"
+    },
+    "27": {
+        "symbol": "Co",
+        "name": "Cobalt",
+        "hexColor": "F090A0",
+        "mass": 58.933,
+        "category": "Transition Metal"
+    },
+    "28": {
+        "symbol": "Ni",
+        "name": "Nickel",
+        "hexColor": "50D050",
+        "mass": 58.693,
+        "category": "Transition Metal"
+    },
+    "29": {
+        "symbol": "Cu",
+        "name": "Copper",
+        "hexColor": "C88033",
+        "mass": 63.546,
+        "category": "Transition Metal"
+    },
+    "30": {
+        "symbol": "Zn",
+        "name": "Zinc",
+        "hexColor": "7D80B0",
+        "mass": 65.38,
+        "category": "Transition Metal"
+    },
+    "31": {
+        "symbol": "Ga",
+        "name": "Gallium",
+        "hexColor": "C28F8F",
+        "mass": 69.723,
+        "category": "Post-Transition Metal"
+    },
+    "32": {
+        "symbol": "Ge",
+        "name": "Germanium",
+        "hexColor": "668F8F",
+        "mass": 72.630,
+        "category": "Metalloid"
+    },
+    "33": {
+        "symbol": "As",
+        "name": "Arsenic",
+        "hexColor": "BD80E3",
+        "mass": 74.922,
+        "category": "Metalloid"
+    },
+    "34": {
+        "symbol": "Se",
+        "name": "Selenium",
+        "hexColor": "FFA100",
+        "mass": 78.971,
+        "category": "Other Nonmetal"
+    },
+    "35": {
+        "symbol": "Br",
+        "name": "Bromine",
+        "hexColor": "A62929",
+        "mass": 79.904,
+        "category": "Other Nonmetal"
+    },
+    "36": {
+        "symbol": "Kr",
+        "name": "Krypton",
+        "hexColor": "5CB8D1",
+        "mass": 83.798,
+        "category": "Noble Gas"
+    },
+    "37": {
+        "symbol": "Rb",
+        "name": "Rubidium",
+        "hexColor": "702EB0",
+        "mass": 85.468,
+        "category": "Alkali Metal"
+    },
+    "38": {
+        "symbol": "Sr",
+        "name": "Strontium",
+        "hexColor": "00FF00",
+        "mass": 87.62,
+        "category": "Alkaline Earth Metal"
+    },
+    "39": {
+        "symbol": "Y",
+        "name": "Yttrium",
+        "hexColor": "94FFFF",
+        "mass": 88.906,
+        "category": "Transition Metal"
+    },
+    "40": {
+        "symbol": "Zr",
+        "name": "Zirconium",
+        "hexColor": "94E0E0",
+        "mass": 91.224,
+        "category": "Transition Metal"
+    },
+    "41": {
+        "symbol": "Nb",
+        "name": "Niobium",
+        "hexColor": "73C2C9",
+        "mass": 92.906,
+        "category": "Transition Metal"
+    },
+    "42": {
+        "symbol": "Mo",
+        "name": "Molybdenur",
+        "hexColor": "54B5B5",
+        "mass": 95.95,
+        "category": "Transition Metal"
+    },
+    "43": {
+        "symbol": "Tc",
+        "name": "Technetium",
+        "hexColor": "3B9E9E",
+        "mass": "(98)",
+        "category": "Transition Metal"
+    },
+    "44": {
+        "symbol": "Ru",
+        "name": "Ruthenium",
+        "hexColor": "248F8F",
+        "mass": 101.07,
+        "category": "Transition Metal"
+    },
+    "45": {
+        "symbol": "Rh",
+        "name": "Rhodium",
+        "hexColor": "0A7D8C",
+        "mass": 102.91,
+        "category": "Transition Metal"
+    },
+    "46": {
+        "symbol": "Pd",
+        "name": "Palladium",
+        "hexColor": "006985",
+        "mass": 106.42,
+        "category": "Transition Metal"
+    },
+    "47": {
+        "symbol": "Ag",
+        "name": "Silver",
+        "hexColor": "C0C0C0",
+        "mass": 107.87,
+        "category": "Transition Metal"
+    },
+    "48": {
+        "symbol": "Cd",
+        "name": "Cadmium",
+        "hexColor": "FFD98F",
+        "mass": 112.41,
+        "category": "Transition Metal"
+    },
+    "49": {
+        "symbol": "In",
+        "name": "Indium",
+        "hexColor": "A67573",
+        "mass": 114.82,
+        "category": "Post-Transition Metal"
+    },
+    "50": {
+        "symbol": "Sn",
+        "name": "Tin",
+        "hexColor": "668080",
+        "mass": 118.71,
+        "category": "Post-Transition Metal"
+    },
+    "51": {
+        "symbol": "Sb",
+        "name": "Antimony",
+        "hexColor": "9E63B5",
+        "mass": 121.76,
+        "category": "Metalloid"
+    },
+    "52": {
+        "symbol": "Te",
+        "name": "Tellurium",
+        "hexColor": "D47A00",
+        "mass": 127.60,
+        "category": "Metalloid"
+    },
+    "53": {
+        "symbol": "I",
+        "name": "Iodine",
+        "hexColor": "940094",
+        "mass": 126.90,
+        "category": "Other Nonmetal"
+    },
+    "54": {
+        "symbol": "Xe",
+        "name": "Xenon",
+        "hexColor": "429EB0",
+        "mass": 131.29,
+        "category": "Noble Gas"
+    },
+    "55": {
+        "symbol": "Cs",
+        "name": "Caesium",
+        "hexColor": "57178F",
+        "mass": 132.91,
+        "category": "Alkali Metal"
+    },
+    "56": {
+        "symbol": "Ba",
+        "name": "Barium",
+        "hexColor": "00C900",
+        "mass": 137.33,
+        "category": "Alkaline Earth Metal"
+    },
+    "57": {
+        "symbol": "La",
+        "name": "Lanthanum",
+        "hexColor": "70D4FF",
+        "mass": 138.91,
+        "category": "Lanthanoid"
+    },
+    "58": {
+        "symbol": "Ce",
+        "name": "Cerium",
+        "hexColor": "FFFFC7",
+        "mass": 140.12,
+        "category": "Lanthanoid"
+    },
+    "59": {
+        "symbol": "Pr",
+        "name": "Praseodymium",
+        "hexColor": "D9FFC7",
+        "mass": 140.91,
+        "category": "Lanthanoid"
+    },
+    "60": {
+        "symbol": "Nd",
+        "name": "Neodymium",
+        "hexColor": "C7FFC7",
+        "mass": 144.24,
+        "category": "Lanthanoid"
+    },
+    "61": {
+        "symbol": "Pm",
+        "name": "Promethium",
+        "hexColor": "A3FFC7",
+        "mass": "(145)",
+        "category": "Lanthanoid"
+    },
+    "62": {
+        "symbol": "Sm",
+        "name": "Samarium",
+        "hexColor": "8FFFC7",
+        "mass": 150.36,
+        "category": "Lanthanoid"
+    },
+    "63": {
+        "symbol": "Eu",
+        "name": "Europium",
+        "hexColor": "61FFC7",
+        "mass": 151.96,
+        "category": "Lanthanoid"
+    },
+    "64": {
+        "symbol": "Gd",
+        "name": "Gadolinium",
+        "hexColor": "45FFC7",
+        "mass": 157.25,
+        "category": "Lanthanoid"
+    },
+    "65": {
+        "symbol": "Tb",
+        "name": "Terbium",
+        "hexColor": "30FFC7",
+        "mass": 158.93,
+        "category": "Lanthanoid"
+    },
+    "66": {
+        "symbol": "Dy",
+        "name": "Dysprosium",
+        "hexColor": "1FFFC7",
+        "mass": 162.50,
+        "category": "Lanthanoid"
+    },
+    "67": {
+        "symbol": "Ho",
+        "name": "Holmium",
+        "hexColor": "00FF9C",
+        "mass": 164.93,
+        "category": "Lanthanoid"
+    },
+    "68": {
+        "symbol": "Er",
+        "name": "Erbium",
+        "hexColor": "00E675",
+        "mass": 167.26,
+        "category": "Lanthanoid"
+    },
+    "69": {
+        "symbol": "Tm",
+        "name": "Thulium",
+        "hexColor": "00D452",
+        "mass": 168.93,
+        "category": "Lanthanoid"
+    },
+    "70": {
+        "symbol": "Yb",
+        "name": "Ytterbium",
+        "hexColor": "00BF38",
+        "mass": 173.05,
+        "category": "Lanthanoid"
+    },
+    "71": {
+        "symbol": "Lu",
+        "name": "Lutetium",
+        "hexColor": "00AB24",
+        "mass": 174.97,
+        "category": "Lanthanoid"
+    },
+    "72": {
+        "symbol": "Hf",
+        "name": "Hafnium",
+        "hexColor": "4DA6FF",
+        "mass": 178.49,
+        "category": "Transition Metal"
+    },
+    "73": {
+        "symbol": "Ta",
+        "name": "Tantalum",
+        "hexColor": "4DA6FF",
+        "mass": 180.95,
+        "category": "Transition Metal"
+    },
+    "74": {
+        "symbol": "W",
+        "name": "Tungsten",
+        "hexColor": "2194D6",
+        "mass": 183.84,
+        "category": "Transition Metal"
+    },
+    "75": {
+        "symbol": "Re",
+        "name": "Rhenium",
+        "hexColor": "267DAB",
+        "mass": 186.21,
+        "category": "Transition Metal"
+    },
+    "76": {
+        "symbol": "Os",
+        "name": "Osmium",
+        "hexColor": "266696",
+        "mass": 190.23,
+        "category": "Transition Metal"
+    },
+    "77": {
+        "symbol": "Ir",
+        "name": "Iridium",
+        "hexColor": "175487",
+        "mass": 192.22,
+        "category": "Transition Metal"
+    },
+    "78": {
+        "symbol": "Pt",
+        "name": "Platinum",
+        "hexColor": "D0D0E0",
+        "mass": 195.08,
+        "category": "Transition Metal"
+    },
+    "79": {
+        "symbol": "Au",
+        "name": "Gold",
+        "hexColor": "FFD123",
+        "mass": 196.97,
+        "category": "Transition Metal"
+    },
+    "80": {
+        "symbol": "Hg",
+        "name": "Mercury",
+        "hexColor": "B8B8D0",
+        "mass": 200.59,
+        "category": "Transition Metal"
+    },
+    "81": {
+        "symbol": "Tl",
+        "name": "Thallium",
+        "hexColor": "A6544D",
+        "mass": 204.38,
+        "category": "Post-Transition Metal"
+    },
+    "82": {
+        "symbol": "Pb",
+        "name": "Lead",
+        "hexColor": "575961",
+        "mass": 207.2,
+        "category": "Post-Transition Metal"
+    },
+    "83": {
+        "symbol": "Bi",
+        "name": "Bismuth",
+        "hexColor": "9E4FB5",
+        "mass": 208.98,
+        "category": "Post-Transition Metal"
+    },
+    "84": {
+        "symbol": "Po",
+        "name": "Polonium",
+        "hexColor": "AB5C00",
+        "mass": "(209)",
+        "category": "Post-Transition Metal"
+    },
+    "85": {
+        "symbol": "At",
+        "name": "Astatine",
+        "hexColor": "754F45",
+        "mass": "(210)",
+        "category": "Metalloid"
+    },
+    "86": {
+        "symbol": "Rn",
+        "name": "Radon",
+        "hexColor": "428296",
+        "mass": "(222)",
+        "category": "Noble Gas"
+    },
+    "87": {
+        "symbol": "Fr",
+        "name": "Francium",
+        "hexColor": "420066",
+        "mass": "(223)",
+        "category": "Alkali Metal"
+    },
+    "88": {
+        "symbol": "Ra",
+        "name": "Radium",
+        "hexColor": "007D00",
+        "mass": "(226)",
+        "category": "Alkaline Earth Metal"
+    },
+    "89": {
+        "symbol": "Ac",
+        "name": "Actinium",
+        "hexColor": "70ABFA",
+        "mass": "(227)",
+        "category": "Actinoid"
+    },
+    "90": {
+        "symbol": "Th",
+        "name": "Thorium",
+        "hexColor": "00BAFF",
+        "mass": 232.04,
+        "category": "Actinoid"
+    },
+    "91": {
+        "symbol": "Pa",
+        "name": "Protactinium",
+        "hexColor": "00A1FF",
+        "mass": 231.04,
+        "category": "Actinoid"
+    },
+    "92": {
+        "symbol": "U",
+        "name": "Uranium",
+        "hexColor": "008FFF",
+        "mass": 238.03,
+        "category": "Actinoid"
+    },
+    "93": {
+        "symbol": "Np",
+        "name": "Neptunium",
+        "hexColor": "0080FF",
+        "mass": "(237)",
+        "category": "Actinoid"
+    },
+    "94": {
+        "symbol": "Pu",
+        "name": "Plutonium",
+        "hexColor": "006BFF",
+        "mass": "(244)",
+        "category": "Actinoid"
+    },
+    "95": {
+        "symbol": "Am",
+        "name": "Americium",
+        "hexColor": "545CF2",
+        "mass": "(243)",
+        "category": "Actinoid"
+    },
+    "96": {
+        "symbol": "Cm",
+        "name": "Curium",
+        "hexColor": "785CE3",
+        "mass": "(247)",
+        "category": "Actinoid"
+    },
+    "97": {
+        "symbol": "Bk",
+        "name": "Berkelium",
+        "hexColor": "8A4FE3",
+        "mass": "(247)",
+        "category": "Actinoid"
+    },
+    "98": {
+        "symbol": "Cf",
+        "name": "Californium",
+        "hexColor": "A136D4",
+        "mass": "(251)",
+        "category": "Actinoid"
+    },
+    "99": {
+        "symbol": "Es",
+        "name": "Einsteinium",
+        "hexColor": "B31FD4",
+        "mass": "(252)",
+        "category": "Actinoid"
+    },
+    "100": {
+        "symbol": "Fm",
+        "name": "Fermium",
+        "hexColor": "B31FBA",
+        "mass": "(257)",
+        "category": "Actinoid"
+    },
+    "101": {
+        "symbol": "Md",
+        "name": "Mendelevium",
+        "hexColor": "B30DA6",
+        "mass": "(258)",
+        "category": "Actinoid"
+    },
+    "102": {
+        "symbol": "No",
+        "name": "Nobelium",
+        "hexColor": "BD0D87",
+        "mass": "(259)",
+        "category": "Actinoid"
+    },
+    "103": {
+        "symbol": "Lr",
+        "name": "Lawrencium",
+        "hexColor": "C70066",
+        "mass": "(266)",
+        "category": "Actinoid"
+    },
+    "104": {
+        "symbol": "Rf",
+        "name": "Rutherfordium",
+        "hexColor": "CC0059",
+        "mass": "(267)",
+        "category": "Transition Metal"
+    },
+    "105": {
+        "symbol": "Db",
+        "name": "Dubnium",
+        "hexColor": "D1004F",
+        "mass": "(268)",
+        "category": "Transition Metal"
+    },
+    "106": {
+        "symbol": "Sg",
+        "name": "Seaborgium",
+        "hexColor": "D90045",
+        "mass": "(269)",
+        "category": "Transition Metal"
+    },
+    "107": {
+        "symbol": "Bh",
+        "name": "Bohrium",
+        "hexColor": "E00038",
+        "mass": "(270)",
+        "category": "Transition Metal"
+    },
+    "108": {
+        "symbol": "Hs",
+        "name": "Hassium",
+        "hexColor": "E6002E",
+        "mass": "(270)",
+        "category": "Transition Metal"
+    },
+    "109": {
+        "symbol": "Mt",
+        "name": "Meitnerium",
+        "hexColor": "EB0026",
+        "mass": "(278)",
+        "category": "Unknown"
+},
+    "110": {
+        "symbol": "Ds",
+        "name": "Meitnerium",
+        "hexColor": "000000",
+        "mass": "(281)",
+        "category": "Unknown"
+},
+    "111": {
+        "symbol": "Rg",
+        "name": "Meitnerium",
+        "hexColor": "000000",
+        "mass": "(282)",
+        "category": "Unknown"
+},
+    "112": {
+        "symbol": "Cn",
+        "name": "Copernicium",
+        "hexColor": "000000",
+        "mass": "(285)",
+        "category": "Transition Metal"
+},
+    "113": {
+        "symbol": "Nh",
+        "name": "Meitnerium",
+        "hexColor": "000000",
+        "mass": "(286)",
+        "category": "Unknown"
+},
+    "114": {
+        "symbol": "Fl",
+        "name": "Flerovium",
+        "hexColor": "000000",
+        "mass": "(289)",
+        "category": "Post-Transition Metal"
+},
+    "115": {
+        "symbol": "Mc",
+        "name": "Moscovium",
+        "hexColor": "000000",
+        "mass": "(290)",
+        "category": "Unknown"
+},
+    "116": {
+        "symbol": "Lv",
+        "name": "Livermorium",
+        "hexColor": "000000",
+        "mass": "(293)",
+        "category": "Unknown"
+},
+    "117": {
+        "symbol": "Ts",
+        "name": "Tennessine",
+        "hexColor": "000000",
+        "mass": "(294)",
+        "category": "Unknown"
+},
+    "118": {
+        "symbol": "Og",
+        "name": "Oganesson",
+        "hexColor": "000000",
+        "mass": "(294)",
+        "category": "Unknown"
+    }
 }

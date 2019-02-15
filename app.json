@@ -1,21 +1,22 @@
 {
   "expo": {
-    "name": "playground2",
-    "description": "This project is really great.",
-    "slug": "playground2",
+    "name": "Chemodel 3D and AR",
+    "description": "View chemical compounds in 3D and AR",
+    "slug": "chemodel",
     "privacy": "public",
     "sdkVersion": "32.0.0",
-    "platforms": ["ios", "android"],
+    "platforms": ["ios"],
     "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "orientation": "default",
+    "icon": "./assets/chemodel_icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/chemodel_splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#212121"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.brandonchong.chemodel"
     }
   }
 }
