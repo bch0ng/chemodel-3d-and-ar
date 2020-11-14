@@ -1,7 +1,7 @@
 import { ViroSphere } from 'react-viro';
 import * as React from 'react';
 import { SafeAreaView, Text, TouchableHighlight, View } from 'react-native';
-import { Atom } from '@local-types';
+import { Atom } from '@types';
 
 interface AtomModelProps {
     name: string;

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ViroMaterials } from 'react-viro';
 import * as atoms from 'assets/atoms.json';
-import { Atom } from '@local-types';
+import { Atom } from '@types';
 import { AtomModel } from './AtomModel';
 
 interface Material {

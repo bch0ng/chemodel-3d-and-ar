@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ViroARSceneNavigator } from 'react-viro';
 import { SafeAreaView, View } from 'react-native';
-import { Atom } from '@local-types';
+import { Atom } from '@types';
 import { Scene } from './Scene';
 import { AtomInfo } from './AtomModel';
 

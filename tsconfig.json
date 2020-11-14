@@ -9,10 +9,10 @@
     "resolveJsonModule": true,
     "strict": true,
     "typeRoots": ["node_modules/@types", "./src/@types"],
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "paths": {
-      "@local-types/*": [ "./@types/*" ],
-      "assets/*": [ "./assets/*" ]
+      "@types/*": [ "@types/*" ],
+      "assets/*": [ "assets/*" ]
     }
   }
 }

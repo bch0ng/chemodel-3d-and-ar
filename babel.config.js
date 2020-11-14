@@ -7,7 +7,7 @@ module.exports = function (api) {
                 'module-resolver',
                 {
                     alias: {
-                        '@local-types': './src/@types/*',
+                        '@types': './src/@types/*',
                         assets: './src/assets/*'
                     }
                 }
