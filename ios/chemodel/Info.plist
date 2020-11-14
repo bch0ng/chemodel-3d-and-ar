@@ -4,6 +4,8 @@
   <dict>
     <key>CFBundleDevelopmentRegion</key>
     <string>en</string>
+    <key>CFBundleDisplayName</key>
+    <string>chemodel</string>
     <key>CFBundleExecutable</key>
     <string>$(EXECUTABLE_NAME)</string>
     <key>CFBundleIdentifier</key>
@@ -37,6 +39,8 @@
     </dict>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string/>
+    <key>Privacy - Camera Usage Description</key>
+    <string>Used for AR</string>
     <key>UILaunchStoryboardName</key>
     <string>SplashScreen</string>
     <key>UIRequiredDeviceCapabilities</key>
@@ -63,7 +67,5 @@
     </array>
     <key>UIRequiresFullScreen</key>
     <true/>
-    <key>CFBundleDisplayName</key>
-    <string>chemodel</string>
   </dict>
 </plist>
