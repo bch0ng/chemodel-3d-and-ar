@@ -17,6 +17,8 @@
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
     "react-native-web": "~0.13.12",
+    "react-native-webview": "^10.10.2",
+    "react-viro": "^2.17.0",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {

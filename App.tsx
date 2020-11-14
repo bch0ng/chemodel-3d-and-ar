@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { StatusBar, setStatusBarStyle } from 'expo-status-bar';
 import { TouchableWithoutFeedback, Keyboard } from 'react-native';
 import * as styled from './App.styles';
 import {
@@ -7,6 +6,7 @@ import {
     SearchContext
 } from './src/contexts/SearchContext';
 import { SearchBar } from './src/components/search/SearchBar';
+import { CompoundARViewer } from './src/components/compound-viewer/CompoundViewer';
 
 // Dismisses keyboard when pressed outside of an input field.
 interface DismissKeyboardProps {
@@ -23,13 +23,12 @@ function DismissKeyboard(props: DismissKeyboardProps): JSX.Element {
 }
 
 export default function App(): JSX.Element {
-    setStatusBarStyle('light');
     return (
         <SearchContext.Provider value={useCreateSearchContext()}>
             <DismissKeyboard>
                 <styled.AppView>
                     <SearchBar />
-                    <StatusBar style="auto" />
+                    <CompoundARViewer />
                 </styled.AppView>
             </DismissKeyboard>
         </SearchContext.Provider>

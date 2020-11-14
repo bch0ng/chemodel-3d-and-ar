@@ -37,20 +37,25 @@ interface Coordinates {
 }
 
 interface Aids {
-    first: any;
-    second: any;
+    from: number;
+    to: number;
 }
 
 interface CompoundData {
-    coords: Coordinates;
-    aids: Aids;
-    numOfBonds: number;
+    coords: Coordinates[];
+    aids: Aids[];
+    numOfBonds: number[];
     elements: any;
     has3DModel: boolean;
 }
 
+interface FormulaAndWeight {
+    formula: string;
+    weight: number;
+}
+
 interface CompoundInfo {
-    cid?: number;
+    cid: number;
     name?: string;
     imageURL?: string;
     formula?: string;
@@ -108,63 +113,56 @@ export function useCreateSearchContext(): SearchContextValue {
     async function requestCompoundID(
         query: string
     ): Promise<number | undefined> {
-        let cid: number | undefined;
         try {
             const url = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/${query}/record/JSON/`;
             let res = await fetch(url);
             let resJSON = await res.json();
             if (!resJSON.Fault && resJSON.PC_Compounds?.[0]?.id?.id) {
-                cid = resJSON.PC_Compounds[0].id.id.cid;
+                return resJSON.PC_Compounds[0].id.id.cid;
             }
         } catch (err) {
             console.log(err);
         }
-        setCompound({
-            ...compound,
-            cid
-        });
-        return cid;
+        return undefined;
     }
 
-    async function requestCompoundName(cid: number): Promise<void> {
-        let name: string | undefined;
+    async function requestCompoundName(
+        cid: number
+    ): Promise<string | undefined> {
         try {
             const url = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/description/JSON`;
             const res = await fetch(url);
             const resJSON = await res.json();
             if (resJSON.InformationList?.Information?.[0]) {
-                name = resJSON.InformationList.Information[0].Title;
+                return resJSON.InformationList.Information[0].Title;
             }
         } catch (err) {
             console.log(err);
         }
-        setCompound({ ...compound, name });
+        return undefined;
     }
 
-    async function requestCompoundFormulaAndWeight(cid: number): Promise<void> {
-        let formula: string | undefined;
-        let weight: number | undefined;
+    async function requestCompoundFormulaAndWeight(
+        cid: number
+    ): Promise<FormulaAndWeight | undefined> {
         try {
             const url = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/property/MolecularFormula,MolecularWeight/JSON/`;
             const res = await fetch(url);
             const resJSON = await res.json();
             const properties = resJSON.PropertyTable?.Properties?.[0];
-            if (properties) {
-                formula = properties.MolecularFormula;
-                weight = properties.MolecularWeight;
-            }
+            return {
+                formula: properties.MolecularFormula,
+                weight: properties.MolecularWeight
+            };
         } catch (err) {
             console.log(err);
         }
-        setCompound({
-            ...compound,
-            formula,
-            weight
-        });
+        return undefined;
     }
 
-    async function requestCompoundData(cid: number): Promise<void> {
-        let compoundData: CompoundData | undefined;
+    async function requestCompoundData(
+        cid: number
+    ): Promise<CompoundData | undefined> {
         try {
             const url = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/record/JSON/?record_type=3d&response_type=display`;
             const res = await fetch(url);
@@ -172,13 +170,28 @@ export function useCreateSearchContext(): SearchContextValue {
             const compound = resJSON.PC_Compounds[0];
             if (resJSON.PC_Compounds) {
                 const { x, y, z } = compound.coords[0].conformers[0];
-                compoundData = {
-                    coords: { x, y, z },
-                    aids: {
-                        first: compound.bonds.aid1,
-                        second: compound.bonds.aid2
-                    },
-                    numOfBonds: compound.bonds.order,
+                const coords: Coordinates[] = [];
+                for (const [idx, val] of x.entries()) {
+                    coords.push({
+                        x: val,
+                        y: y[idx],
+                        z: z[idx]
+                    });
+                }
+
+                const bonds = compound.bonds;
+                const aids: Aids[] = [];
+                for (const [idx, val] of bonds.aid1.entries()) {
+                    aids.push({
+                        from: val,
+                        to: bonds.aid2[idx]
+                    });
+                }
+
+                return {
+                    coords,
+                    aids,
+                    numOfBonds: bonds.order,
                     elements: compound.atoms.element,
                     has3DModel: true
                 };
@@ -186,18 +199,11 @@ export function useCreateSearchContext(): SearchContextValue {
         } catch (error) {
             console.log(error);
         }
-        setCompound({
-            ...compound,
-            data: compoundData
-        });
+        return undefined;
     }
 
-    function requestModel2DImageURL(cid: number): void {
-        const imageURL = `https://pubchem.ncbi.nlm.nih.gov/image/imagefly.cgi?cid=${cid}&width=300&height=300`;
-        setCompound({
-            ...compound,
-            imageURL
-        });
+    function requestModel2DImageURL(cid: number): string {
+        return `https://pubchem.ncbi.nlm.nih.gov/image/imagefly.cgi?cid=${cid}&width=300&height=300`;
     }
 
     // Fetches all information needed about a compound.
@@ -214,12 +220,29 @@ export function useCreateSearchContext(): SearchContextValue {
         if (cid === undefined) {
             setCompound(null);
         } else {
-            await Promise.all([
+            const [
+                name,
+                data,
+                formulaAndWeight,
+                model2DImageURL
+            ] = await Promise.all([
                 requestCompoundName(cid),
                 requestCompoundData(cid),
                 requestCompoundFormulaAndWeight(cid),
                 requestModel2DImageURL(cid)
             ]);
+
+            const compoundInfo: CompoundInfo = {
+                cid,
+                name,
+                data,
+                imageURL: model2DImageURL
+            };
+            if (formulaAndWeight) {
+                compoundInfo.formula = formulaAndWeight.formula;
+                compoundInfo.weight = formulaAndWeight.weight;
+            }
+            setCompound(compoundInfo);
         }
         setIsLoading(false);
     }

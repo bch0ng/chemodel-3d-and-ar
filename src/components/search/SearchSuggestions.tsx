@@ -24,7 +24,7 @@ function SearchSuggestion(props: SearchSuggestionProps): JSX.Element {
 export function SearchSuggestions(): JSX.Element {
     const { suggestions } = useSearchContext();
 
-    if (!suggestions || suggestions.length < 1) {
+    if (suggestions.length < 1) {
         return <></>;
     }
 
