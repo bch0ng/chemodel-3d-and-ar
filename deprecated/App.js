@@ -155,7 +155,7 @@ class HomePage extends Component {
             <Image 
               style={{ flex: 0.5, backgroundColor: 'transparent', alignSelf: 'center' }}
               resizeMode='contain'
-              source={ require('./images/chemodel_logo.png') } />
+              source={ require('../images/chemodel_logo.png') } />
           </View>
         </TouchableWithoutFeedback>
       );
@@ -191,7 +191,7 @@ export default class App extends Component {
 
   async _cacheResourcesAsync() {
     const images = [
-      require('./images/chemodel_logo.png'),
+      require('../images/chemodel_logo.png'),
     ];
     const cacheImages = images.map((image) => {
       return Asset.fromModule(image).downloadAsync();
