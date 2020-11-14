@@ -9,10 +9,12 @@ import { SearchBar } from './src/components/search/SearchBar';
 import { CompoundARViewer } from './src/components/compound-viewer/CompoundViewer';
 
 // Dismisses keyboard when pressed outside of an input field.
-interface DismissKeyboardProps {
+interface DismissKeyboardWrapperProps {
     children: React.ReactNode;
 }
-function DismissKeyboard(props: DismissKeyboardProps): JSX.Element {
+function DismissKeyboardWrapper(
+    props: DismissKeyboardWrapperProps
+): JSX.Element {
     const { children } = props;
 
     return (
@@ -25,12 +27,12 @@ function DismissKeyboard(props: DismissKeyboardProps): JSX.Element {
 export default function App(): JSX.Element {
     return (
         <SearchContext.Provider value={useCreateSearchContext()}>
-            <DismissKeyboard>
+            <DismissKeyboardWrapper>
                 <styled.AppView>
                     <SearchBar />
                     <CompoundARViewer />
                 </styled.AppView>
-            </DismissKeyboard>
+            </DismissKeyboardWrapper>
         </SearchContext.Provider>
     );
 }
