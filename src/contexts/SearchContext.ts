@@ -1,5 +1,12 @@
 import * as React from 'react';
 import { useDebounce } from '../hooks/useDebounce';
+import {
+    CompoundInfo,
+    CompoundData,
+    Coordinates,
+    Aids,
+    FormulaAndWeight
+} from '../@types';
 
 interface SearchContextValue {
     query: string;
@@ -28,39 +35,6 @@ export const SearchContext = React.createContext<SearchContextValue>(
 
 export function useSearchContext(): SearchContextValue {
     return React.useContext(SearchContext);
-}
-
-interface Coordinates {
-    x: number;
-    y: number;
-    z: number;
-}
-
-interface Aids {
-    from: number;
-    to: number;
-}
-
-interface CompoundData {
-    coords: Coordinates[];
-    aids: Aids[];
-    numOfBonds: number[];
-    elements: any;
-    has3DModel: boolean;
-}
-
-interface FormulaAndWeight {
-    formula: string;
-    weight: number;
-}
-
-interface CompoundInfo {
-    cid: number;
-    name?: string;
-    imageURL?: string;
-    formula?: string;
-    weight?: number;
-    data?: CompoundData;
 }
 
 export function useCreateSearchContext(): SearchContextValue {
