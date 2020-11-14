@@ -3,6 +3,7 @@ import { useDebounce } from '../hooks/useDebounce';
 
 interface SearchContextValue {
     query: string;
+    updateQuery: (newQuery: string) => void;
     error?: string;
     suggestions: string[];
     isLoading: boolean;
@@ -12,6 +13,7 @@ interface SearchContextValue {
 
 const initialState: SearchContextValue = {
     query: '',
+    updateQuery: () => {},
     suggestions: [],
     isLoading: false,
     compound: {},
@@ -54,14 +56,8 @@ interface CompoundInfo {
     data?: CompoundData;
 }
 
-interface SearchContextArgs {
-    query: string;
-}
-
-export function useCreateSearchContext(
-    args: SearchContextArgs
-): SearchContextValue {
-    const { query } = args;
+export function useCreateSearchContext(): SearchContextValue {
+    const [query, setQuery] = React.useState('');
     const [isLoading, setIsLoading] = React.useState(false);
     const [error, setError] = React.useState<string | undefined>(undefined);
     const [suggestions, setSuggestions] = React.useState<string[]>([]);
@@ -212,6 +208,7 @@ export function useCreateSearchContext(
 
     return {
         query,
+        updateQuery: (newQuery: string): void => setQuery(newQuery),
         error,
         isLoading,
         suggestions,

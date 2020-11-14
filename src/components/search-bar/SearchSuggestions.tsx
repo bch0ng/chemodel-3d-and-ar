@@ -6,20 +6,6 @@ interface SearchSuggestionsProps {
 }
 export function SearchSuggestions(props: SearchSuggestionsProps): JSX.Element {
     const { query } = props;
-    const searchSuggestions: string[] = React.useMemo(async (): string[] => {
-        let url = `https://pubchem.ncbi.nlm.nih.gov/rest/autocomplete/compound/${query}/json?limit=5`;
-        try {
-            let response = await fetch(url);
-            let responseJSON = await response.json();
-            if (responseJSON.total > 0) {
-                return responseJSON.dictionary_terms.compound;
-            } else {
-                return [];
-            }
-        } catch {
-            return [];
-        }
-    }, [query]);
 
     return (
         <View>
