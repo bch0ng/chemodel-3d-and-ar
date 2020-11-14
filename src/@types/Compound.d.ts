@@ -30,3 +30,12 @@ export interface CompoundInfo {
     weight?: number;
     data?: CompoundData;
 }
+
+export interface Atom {
+    id: number;
+    symbol: string;
+    name: string;
+    category: string;
+    mass: number;
+    color: string;
+}

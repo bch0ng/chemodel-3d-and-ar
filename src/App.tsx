@@ -6,7 +6,7 @@ import {
     SearchContext
 } from './contexts/SearchContext';
 import { SearchBar } from './components/search/SearchBar';
-import { CompoundARViewer } from './components/compound-viewer/CompoundViewer';
+import { ARNavigator } from './components/ar-compound/ARNavigator';
 
 // Dismisses keyboard when pressed outside of an input field.
 interface DismissKeyboardWrapperProps {
@@ -29,7 +29,7 @@ export default function App(): JSX.Element {
         <SearchContext.Provider value={useCreateSearchContext()}>
             <DismissKeyboardWrapper>
                 <styled.AppView>
-                    <CompoundARViewer />
+                    <ARNavigator />
                 </styled.AppView>
             </DismissKeyboardWrapper>
         </SearchContext.Provider>
