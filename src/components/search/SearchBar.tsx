@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Text, TextInput, View } from 'react-native';
 import { useSearchContext } from '../../contexts/SearchContext';
 import { SearchSuggestions } from './SearchSuggestions';
 import * as styled from './SearchBar.styles';
@@ -9,7 +8,7 @@ export function SearchBar(): JSX.Element {
     const [isFocused, setIsFocused] = React.useState(false);
 
     return (
-        <View>
+        <>
             <styled.SearchInput
                 placeholder="Enter Compound Here"
                 selectionColor={'#81D4FA'}
@@ -21,8 +20,9 @@ export function SearchBar(): JSX.Element {
                 onSubmitEditing={(): void => {
                     onQuerySubmit();
                 }}
+                isFocused={isFocused}
             />
             {isFocused && <SearchSuggestions />}
-        </View>
+        </>
     );
 }
