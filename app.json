@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "chemodel",
-    "description": "View chemical compounds in 3D and AR",
+    "description": "View chemical compounds in AR",
     "slug": "chemodel",
     "version": "1.0.0",
     "orientation": "portrait",

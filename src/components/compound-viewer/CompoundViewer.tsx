@@ -5,9 +5,11 @@ import { Text } from 'react-native';
 
 export function CompoundARViewer(): JSX.Element {
     const { isLoading, compound } = useSearchContext();
+
     if (!compound || compound.cid === undefined) {
         return <></>;
     }
+
     if (isLoading) {
         return <Text style={{ color: 'white' }}>Is loading...</Text>;
     }
