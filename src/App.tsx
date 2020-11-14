@@ -29,7 +29,6 @@ export default function App(): JSX.Element {
         <SearchContext.Provider value={useCreateSearchContext()}>
             <DismissKeyboardWrapper>
                 <styled.AppView>
-                    <SearchBar />
                     <CompoundARViewer />
                 </styled.AppView>
             </DismissKeyboardWrapper>
