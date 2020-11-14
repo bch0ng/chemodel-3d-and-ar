@@ -4,9 +4,9 @@ import * as styled from './App.styles';
 import {
     useCreateSearchContext,
     SearchContext
-} from './src/contexts/SearchContext';
-import { SearchBar } from './src/components/search/SearchBar';
-import { CompoundARViewer } from './src/components/compound-viewer/CompoundViewer';
+} from './contexts/SearchContext';
+import { SearchBar } from './components/search/SearchBar';
+import { CompoundARViewer } from './components/compound-viewer/CompoundViewer';
 
 // Dismisses keyboard when pressed outside of an input field.
 interface DismissKeyboardWrapperProps {
