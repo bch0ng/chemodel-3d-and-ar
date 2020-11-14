@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const AppView = styled.SafeAreaView`
+export const AppView = styled.View`
     display: flex;
     justify-content: center;
     align-items: center;

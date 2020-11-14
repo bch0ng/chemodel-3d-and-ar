@@ -2,13 +2,23 @@ import * as React from 'react';
 import {
     ViroARScene,
     ViroText,
+    ViroSphere,
     ViroConstants,
-    ViroARSceneNavigator
+    ViroARSceneNavigator,
+    ViroMaterials,
+    ViroBox
 } from 'react-viro';
 import { View, Text, ActivityIndicator } from 'react-native';
 
+ViroMaterials.createMaterials({
+    grid: {
+        diffuseTexture: require('../../../../assets/grid_bg.jpg')
+    }
+});
+
 function Scene(): JSX.Element {
     const [isTracking, setIsTracking] = React.useState(false);
+    const [hasTouched, setHasTouched] = React.useState(false);
 
     function onInitialized(state: any, reason: any): void {
         if (state == ViroConstants.TRACKING_NORMAL) {
@@ -18,108 +28,46 @@ function Scene(): JSX.Element {
         }
     }
 
+    function onTouch(): void {
+        setHasTouched(!hasTouched);
+    }
+
     return (
         <ViroARScene onTrackingUpdated={onInitialized}>
-            <ViroText
-                text={isTracking ? 'Hello world' : 'Bye world'}
-                position={[0, 0, -1]}
-                style={{ color: 'black' }}
+            {hasTouched && (
+                <ViroText
+                    text={isTracking ? 'Hello world' : 'Bye world'}
+                    position={[0, 0, -1]}
+                    style={{ color: 'black', fontSize: 30 }}
+                />
+            )}
+            <ViroSphere
+                heightSegmentCount={20}
+                widthSegmentCount={20}
+                radius={0.01}
+                position={[0, -0.25, -0.25]}
+                scale={[1, 1, 1]}
+                materials={['grid']}
+                onClick={onTouch}
             />
         </ViroARScene>
     );
 }
 
 export function ViroAR(): JSX.Element {
-    const [isLoading, setIsLoading] = React.useState(false);
-    const [isInitialized, setIsInitialized] = React.useState(false);
-
-    // Invoked when a model has started to load, we show a loading indictator.
-    function onLoadStart() {
-        setIsLoading(true);
-    }
-
-    // Invoked when a model has loaded, we hide the loading indictator.
-    function onLoadEnd() {
-        setIsLoading(false);
-    }
-
-    function renderTrackingText() {
-        if (isInitialized) {
-            return (
-                <View
-                    style={{
-                        position: 'absolute',
-                        backgroundColor: '#ffffff22',
-                        left: 30,
-                        right: 30,
-                        top: 30,
-                        alignItems: 'center'
-                    }}
-                >
-                    <Text style={{ fontSize: 12, color: '#ffffff' }}>
-                        Tracking initialized.
-                    </Text>
-                </View>
-            );
-        } else {
-            return (
-                <View
-                    style={{
-                        position: 'absolute',
-                        backgroundColor: '#ffffff22',
-                        left: 30,
-                        right: 30,
-                        top: 30,
-                        alignItems: 'center'
-                    }}
-                >
-                    <Text style={{ fontSize: 12, color: '#ffffff' }}>
-                        Waiting for tracking to initialize.
-                    </Text>
-                </View>
-            );
-        }
-    }
-
-    function onTrackingInit() {
-        setIsInitialized(true);
-    }
-
     return (
-        <View>
+        <View style={{ flex: 1, width: '100%', height: '100%' }}>
             <ViroARSceneNavigator
                 apiKey=""
                 initialScene={{
                     scene: Scene
                 }}
                 viroAppProps={{
-                    displayObject: false,
-                    yOffset: 0,
-                    _onLoadEnd: onLoadEnd,
-                    _onLoadStart: onLoadStart,
-                    _onTrackingInit: onTrackingInit
+                    displayObject: true
                 }}
+                autofocus={true}
+                worldAlignment={'Gravity'}
             />
-            {renderTrackingText()}
-            {isLoading && (
-                <View
-                    style={{
-                        position: 'absolute',
-                        left: 0,
-                        right: 0,
-                        top: 0,
-                        bottom: 0,
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                    }}
-                >
-                    <ActivityIndicator
-                        size="large"
-                        animating={isLoading}
-                        color="#ffffff"
-                    />
-                </View>
-            )}
         </View>
     );
 }
