@@ -12,6 +12,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
+		861C7C92255FDC0100217F9A /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 		C41C034FA5DC8A9F8CF6F277 /* Pods_chemodel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5932F97D32043AAF3A8D0A /* Pods_chemodel.framework */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				861C7C92255FDC0100217F9A /* JavaScriptCore.framework in Frameworks */,
 				C41C034FA5DC8A9F8CF6F277 /* Pods_chemodel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
