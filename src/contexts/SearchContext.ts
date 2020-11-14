@@ -6,15 +6,17 @@ interface SearchContextValue {
     updateQuery: (newQuery: string) => void;
     error?: string;
     suggestions: string[];
+    selectSuggestion: (suggestion: string) => void;
     isLoading: boolean;
     compound: any;
-    onQuerySubmit: () => Promise<void>;
+    onQuerySubmit: (manualQuery?: string) => Promise<void>;
 }
 
 const initialState: SearchContextValue = {
     query: '',
     updateQuery: () => {},
     suggestions: [],
+    selectSuggestion: () => {},
     isLoading: false,
     compound: {},
     onQuerySubmit: async () => {}
@@ -61,36 +63,44 @@ export function useCreateSearchContext(): SearchContextValue {
     const [isLoading, setIsLoading] = React.useState(false);
     const [error, setError] = React.useState<string | undefined>(undefined);
     const [suggestions, setSuggestions] = React.useState<string[]>([]);
-    const [cid, setCID] = React.useState<number | undefined>(undefined);
     const [compound, setCompound] = React.useState<CompoundInfo | null>(null);
 
     const debouncedQuery = useDebounce({ value: query, delay: 500 });
+
+    async function fetchSuggestions(): Promise<void> {
+        const url = `https://pubchem.ncbi.nlm.nih.gov/rest/autocomplete/compound/${debouncedQuery}/json?limit=5`;
+        try {
+            const res = await fetch(url);
+            const resJSON = await res.json();
+            if (
+                resJSON.total > 0 &&
+                resJSON.dictionary_terms &&
+                resJSON.dictionary_terms.compound
+            ) {
+                setSuggestions(resJSON.dictionary_terms.compound);
+            } else {
+                setSuggestions([]);
+            }
+        } catch (err) {
+            setSuggestions([]);
+            console.log(err);
+        }
+    }
 
     // Get search suggestions
     React.useEffect((): void => {
         // Reset error
         setError(undefined);
-        async function fetchSuggestions(): Promise<void> {
-            const url = `https://pubchem.ncbi.nlm.nih.gov/rest/autocomplete/compound/${debouncedQuery}/json?limit=5`;
-            try {
-                const res = await fetch(url);
-                const resJSON = await res.json();
-                if (
-                    resJSON.total > 0 &&
-                    resJSON.dictionary_terms &&
-                    resJSON.dictionary_terms.compound
-                ) {
-                    setSuggestions(resJSON.dictionary_terms.compound);
-                } else {
-                    setSuggestions([]);
-                }
-            } catch (err) {
-                setSuggestions([]);
-                console.log(err);
-            }
+        if (debouncedQuery) {
+            fetchSuggestions();
         }
-        fetchSuggestions();
     }, [debouncedQuery]);
+
+    React.useEffect((): void => {
+        if (!query) {
+            setSuggestions([]);
+        }
+    }, [query]);
 
     // Gets the compound ID. We must get the CID before requesting any
     // additional data. This also helps us check if the query is a valid
@@ -190,9 +200,17 @@ export function useCreateSearchContext(): SearchContextValue {
         });
     }
 
-    async function requestCompound(): Promise<void> {
+    // Fetches all information needed about a compound.
+    // A manualQuery can be used for search suggestions to bypass the
+    // wait for the query state to update.
+    // TODO(brandon): Make this cleaner by removing this manualQuery param.
+    async function requestCompound(manualQuery?: string): Promise<void> {
         setIsLoading(true);
-        const cid: number | undefined = await requestCompoundID(debouncedQuery);
+        // We use query and not debouncedQuery here because the
+        // debouncedQuery might be slightly outdated.
+        const cid: number | undefined = await requestCompoundID(
+            manualQuery || query
+        );
         if (cid === undefined) {
             setCompound(null);
         } else {
@@ -206,12 +224,19 @@ export function useCreateSearchContext(): SearchContextValue {
         setIsLoading(false);
     }
 
+    function selectSuggestion(suggestion: string): void {
+        // Setting the query to '' will clear the suggestions
+        setQuery('');
+        requestCompound(suggestion);
+    }
+
     return {
         query,
         updateQuery: (newQuery: string): void => setQuery(newQuery),
         error,
-        isLoading,
         suggestions,
+        selectSuggestion,
+        isLoading,
         compound,
         onQuerySubmit: requestCompound
     };

@@ -1,30 +1,43 @@
 import * as React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { ScrollView, View } from 'react-native';
+import { useSearchContext } from '../../contexts/SearchContext';
+import * as styled from './SearchSuggestions.styles';
 
-interface SearchSuggestionsProps {
-    query: string;
+interface SearchSuggestionProps {
+    suggestion: string;
 }
-export function SearchSuggestions(props: SearchSuggestionsProps): JSX.Element {
-    const { query } = props;
+function SearchSuggestion(props: SearchSuggestionProps): JSX.Element {
+    const { suggestion } = props;
+    const { selectSuggestion } = useSearchContext();
 
     return (
-        <View>
-            <TouchableOpacity
-                key={elem}
-                onPress={() => this.autoCompletePressed(elem)}
-                style={{
-                    padding: 10,
-                    borderColor: '#fff',
-                    borderWidth: 2,
-                    marginRight: 10
-                }}
-            >
-                <Text
-                    style={{ fontSize: 18, color: '#fff', textAlign: 'center' }}
-                >
-                    {elem}
-                </Text>
-            </TouchableOpacity>
-        </View>
+        <styled.SearchSuggestionItem
+            onPress={(): void => selectSuggestion(suggestion)}
+        >
+            <styled.SearchSuggestionText>
+                {suggestion}
+            </styled.SearchSuggestionText>
+        </styled.SearchSuggestionItem>
+    );
+}
+
+export function SearchSuggestions(): JSX.Element {
+    const { suggestions } = useSearchContext();
+
+    if (!suggestions || suggestions.length < 1) {
+        return <></>;
+    }
+
+    return (
+        <ScrollView keyboardShouldPersistTaps="handled">
+            <View>
+                {suggestions.map((suggestion, idx) => (
+                    <SearchSuggestion
+                        key={`suggestion_${idx}_${suggestion}`}
+                        suggestion={suggestion}
+                    />
+                ))}
+            </View>
+        </ScrollView>
     );
 }
