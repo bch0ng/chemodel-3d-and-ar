@@ -2,10 +2,13 @@ import * as React from 'react';
 import { useSearchContext } from '../../contexts/SearchContext';
 import { SearchSuggestions } from './SearchSuggestions';
 import * as styled from './SearchBar.styles';
+import { useNavigation } from '@react-navigation/native';
 
 export function SearchBar(): JSX.Element {
     const { query, updateQuery, onQuerySubmit } = useSearchContext();
     const [isFocused, setIsFocused] = React.useState(false);
+
+    const navigation = useNavigation();
 
     return (
         <>
@@ -19,6 +22,7 @@ export function SearchBar(): JSX.Element {
                 placeholderTextColor="rgba(129,212,250,0.7)"
                 onSubmitEditing={(): void => {
                     onQuerySubmit();
+                    navigation.navigate('CompoundInfo');
                 }}
                 isFocused={isFocused}
             />

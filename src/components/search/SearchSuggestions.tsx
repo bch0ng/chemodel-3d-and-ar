@@ -2,6 +2,7 @@ import * as React from 'react';
 import { ScrollView, View } from 'react-native';
 import { useSearchContext } from '../../contexts/SearchContext';
 import * as styled from './SearchSuggestions.styles';
+import { useNavigation } from '@react-navigation/native';
 
 interface SearchSuggestionProps {
     suggestion: string;
@@ -9,10 +10,14 @@ interface SearchSuggestionProps {
 function SearchSuggestion(props: SearchSuggestionProps): JSX.Element {
     const { suggestion } = props;
     const { selectSuggestion } = useSearchContext();
+    const navigation = useNavigation();
 
     return (
         <styled.SearchSuggestionItem
-            onPress={(): void => selectSuggestion(suggestion)}
+            onPress={(): void => {
+                navigation.navigate('CompoundInfo');
+                selectSuggestion(suggestion);
+            }}
         >
             <styled.SearchSuggestionText>
                 {suggestion}

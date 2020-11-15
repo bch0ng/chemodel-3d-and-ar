@@ -13,7 +13,7 @@ export interface CompoundData {
     coords: Coordinates[];
     aids: Aids[];
     numOfBonds: number[];
-    elements: any;
+    elements: number[];
     has3DModel: boolean;
 }
 

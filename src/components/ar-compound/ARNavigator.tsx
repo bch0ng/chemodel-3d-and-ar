@@ -1,22 +1,31 @@
 import * as React from 'react';
 import { ViroARSceneNavigator } from 'react-viro';
-import { SafeAreaView, View } from 'react-native';
-import { Atom } from '@types';
+import { SafeAreaView, View, StatusBar } from 'react-native';
+import { Atom, CompoundData } from '@types';
 import { Scene } from './Scene';
 import { AtomInfo } from './AtomModel';
+import { useRoute, RouteProp } from '@react-navigation/native';
+
+type StackParamList = {
+    ARViewer: { compound: CompoundData };
+};
+
+type ARViewerRouteProp = RouteProp<StackParamList, 'ARViewer'>;
 
 export function ARNavigator(): JSX.Element {
+    const route = useRoute<ARViewerRouteProp>();
+    const { compound } = route.params;
     const [clickedAtom, setClickedAtom] = React.useState<Atom | null>(null);
 
     return (
         <View style={{ flex: 1, width: '100%', height: '100%' }}>
             <ViroARSceneNavigator
-                apiKey=""
                 initialScene={{
                     scene: Scene
                 }}
                 viroAppProps={{
                     displayObject: true,
+                    compound,
                     setClickedAtom: setClickedAtom
                 }}
                 autofocus={true}

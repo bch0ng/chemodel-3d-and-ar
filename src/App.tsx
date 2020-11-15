@@ -1,5 +1,11 @@
 import * as React from 'react';
-import { TouchableWithoutFeedback, Keyboard } from 'react-native';
+import {
+    TouchableWithoutFeedback,
+    Keyboard,
+    Text,
+    View,
+    StatusBar
+} from 'react-native';
 import * as styled from './App.styles';
 import {
     useCreateSearchContext,
@@ -7,6 +13,13 @@ import {
 } from './contexts/SearchContext';
 import { SearchBar } from './components/search/SearchBar';
 import { ARNavigator } from './components/ar-compound/ARNavigator';
+import { NavigationContainer } from '@react-navigation/native';
+import {
+    createStackNavigator,
+    StackNavigationOptions
+} from '@react-navigation/stack';
+import { Home } from './screens/Home';
+import { CompoundInfo } from './screens/CompoundInfo';
 
 // Dismisses keyboard when pressed outside of an input field.
 interface DismissKeyboardWrapperProps {
@@ -24,13 +37,37 @@ function DismissKeyboardWrapper(
     );
 }
 
+const Stack = createStackNavigator();
+
+function ScreenStack(): JSX.Element {
+    const stackHeaderOptions: StackNavigationOptions = {
+        headerTintColor: 'white',
+        headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 16
+        },
+        headerBackTitleStyle: {
+            fontSize: 14
+        },
+        headerTransparent: true
+    };
+
+    return (
+        <NavigationContainer>
+            <Stack.Navigator screenOptions={stackHeaderOptions}>
+                <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen name="CompoundInfo" component={CompoundInfo} />
+                <Stack.Screen name="ARViewer" component={ARNavigator} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}
+
 export default function App(): JSX.Element {
     return (
         <SearchContext.Provider value={useCreateSearchContext()}>
             <DismissKeyboardWrapper>
-                <styled.AppView>
-                    <ARNavigator />
-                </styled.AppView>
+                <ScreenStack />
             </DismissKeyboardWrapper>
         </SearchContext.Provider>
     );
