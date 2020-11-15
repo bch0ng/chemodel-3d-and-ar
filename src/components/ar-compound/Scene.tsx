@@ -1,4 +1,4 @@
-import { ViroARScene, ViroConstants } from 'react-viro';
+import { ViroARScene, ViroConstants, ViroNode } from 'react-viro';
 import { Lighting } from './Lighting';
 import { CompoundModel } from './CompoundModel';
 import * as React from 'react';
@@ -7,6 +7,7 @@ import { Text, View } from 'react-native';
 export function Scene(props: any): JSX.Element {
     const { compound, setClickedAtom } = props.arSceneNavigator.viroAppProps;
     const [trackingMessage, setTrackingMessage] = React.useState('');
+    const sceneRef = React.useRef(null);
 
     function onTrackingUpdated(state: any, reason: any): void {
         if (state == ViroConstants.TRACKING_NORMAL) {
@@ -20,13 +21,20 @@ export function Scene(props: any): JSX.Element {
         }
     }
 
+    const [position, setPosition] = React.useState<number[]>([0, 0, 0]);
+    function onDrag(dragToPos: number[], source: any): void {
+        setPosition(dragToPos);
+    }
+
     return (
         <ViroARScene onTrackingUpdated={onTrackingUpdated}>
             <Lighting />
-            <CompoundModel
-                compound={compound}
-                setClickedAtom={setClickedAtom}
-            />
+            <ViroNode position={position} onDrag={onDrag}>
+                <CompoundModel
+                    compound={compound}
+                    setClickedAtom={setClickedAtom}
+                />
+            </ViroNode>
             {trackingMessage !== '' && (
                 <View style={{ backgroundColor: 'black' }}>
                     <Text style={{ color: 'white' }}>{trackingMessage}</Text>

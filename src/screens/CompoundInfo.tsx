@@ -4,6 +4,7 @@ import { useSearchContext } from '../contexts/SearchContext';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { useHeaderHeight } from '@react-navigation/stack';
+import { SearchBar } from '../components/search/SearchBar';
 
 export function CompoundInfo(): JSX.Element {
     const { compound } = useSearchContext();
@@ -34,6 +35,7 @@ export function CompoundInfo(): JSX.Element {
                     marginTop: headerHeight
                 }}
             >
+                <SearchBar />
                 <Image
                     style={{
                         width: 300,

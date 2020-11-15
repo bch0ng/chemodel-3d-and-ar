@@ -42,6 +42,7 @@ const Stack = createStackNavigator();
 function ScreenStack(): JSX.Element {
     const stackHeaderOptions: StackNavigationOptions = {
         headerTintColor: 'white',
+        headerTitle: 'Chemodel',
         headerTitleStyle: {
             fontWeight: 'bold',
             fontSize: 16
