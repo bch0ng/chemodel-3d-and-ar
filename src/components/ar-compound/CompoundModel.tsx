@@ -87,7 +87,6 @@ export function CompoundModel(props: CompoundModelProps): JSX.Element {
                     ]}
                     scale={[scaledSize, scaledSize, scaledSize]}
                     onClick={(): void => {
-                        console.log('Clicked');
                         setClickedAtom(atom);
                     }}
                 />

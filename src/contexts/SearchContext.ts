@@ -6,7 +6,7 @@ import {
     Coordinates,
     Aids,
     FormulaAndWeight
-} from '@types/index';
+} from '@types';
 
 interface SearchContextValue {
     query: string;
@@ -141,9 +141,12 @@ export function useCreateSearchContext(): SearchContextValue {
             const url = `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/${cid}/record/JSON/?record_type=3d&response_type=display`;
             const res = await fetch(url);
             const resJSON = await res.json();
-            const compound = resJSON.PC_Compounds[0];
-            if (resJSON.PC_Compounds) {
-                const { x, y, z } = compound.coords[0].conformers[0];
+            const compound = resJSON.PC_Compounds?.[0];
+            if (compound) {
+                const { x, y, z } = compound.coords?.[0]?.conformers[0];
+                if (!x || !y || !z) {
+                    return undefined;
+                }
                 const coords: Coordinates[] = [];
                 for (const [idx, val] of x.entries()) {
                     coords.push({

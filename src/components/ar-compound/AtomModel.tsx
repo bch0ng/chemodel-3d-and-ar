@@ -1,6 +1,6 @@
 import { ViroSphere } from 'react-viro';
 import * as React from 'react';
-import { SafeAreaView, Text, TouchableHighlight, View } from 'react-native';
+import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
 import { Atom } from '@types';
 
 interface AtomModelProps {
@@ -56,9 +56,13 @@ export function AtomInfo(props: AtomInfoProps): JSX.Element {
                 {atom.mass}
                 {atom.category}
             </Text>
-            <TouchableHighlight onPress={onClose}>
+            <TouchableOpacity
+                onPress={() => {
+                    onClose();
+                }}
+            >
                 <Text style={{ color: 'white' }}>Close</Text>
-            </TouchableHighlight>
+            </TouchableOpacity>
         </View>
     );
 }

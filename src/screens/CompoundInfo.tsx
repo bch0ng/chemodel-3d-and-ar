@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SafeAreaView, Text, View, Image } from 'react-native';
+import { SafeAreaView, Text, View, Image, Keyboard } from 'react-native';
 import { useSearchContext } from '../contexts/SearchContext';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
@@ -46,7 +46,7 @@ export function CompoundInfo(): JSX.Element {
                     }}
                 />
                 <Text style={{ color: 'white' }}>{compound.name}</Text>
-                {compound && compound.data && (
+                {compound && compound.data && compound.data.has3DModel && (
                     <TouchableHighlight
                         style={{
                             backgroundColor: 'gray',
@@ -55,6 +55,7 @@ export function CompoundInfo(): JSX.Element {
                             width: 50
                         }}
                         onPress={(): void => {
+                            Keyboard.dismiss();
                             navigation.navigate('ARViewer', {
                                 compound: compound.data
                             });

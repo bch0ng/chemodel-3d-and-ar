@@ -1,10 +1,16 @@
 import * as React from 'react';
 import { ViroARSceneNavigator } from 'react-viro';
-import { SafeAreaView, View, StatusBar } from 'react-native';
+import { SafeAreaView, View, Text, Modal } from 'react-native';
 import { Atom, CompoundData } from '@types';
 import { Scene } from './Scene';
 import { AtomInfo } from './AtomModel';
 import { useRoute, RouteProp } from '@react-navigation/native';
+import {
+    FlatList,
+    TouchableHighlight,
+    TouchableOpacity
+} from 'react-native-gesture-handler';
+import { TipModal } from './TipModal';
 
 type StackParamList = {
     ARViewer: { compound: CompoundData };
@@ -18,7 +24,13 @@ export function ARNavigator(): JSX.Element {
     const [clickedAtom, setClickedAtom] = React.useState<Atom | null>(null);
 
     return (
-        <View style={{ flex: 1, width: '100%', height: '100%' }}>
+        <View
+            style={{
+                flex: 1,
+                width: '100%',
+                height: '100%'
+            }}
+        >
             <ViroARSceneNavigator
                 initialScene={{
                     scene: Scene
@@ -31,6 +43,7 @@ export function ARNavigator(): JSX.Element {
                 autofocus={true}
                 worldAlignment={'Gravity'}
             />
+            <TipModal />
             {clickedAtom && (
                 <SafeAreaView
                     style={{
@@ -42,7 +55,9 @@ export function ARNavigator(): JSX.Element {
                 >
                     <AtomInfo
                         atom={clickedAtom}
-                        onClose={(): void => setClickedAtom(null)}
+                        onClose={(): void => {
+                            setClickedAtom(null);
+                        }}
                     />
                 </SafeAreaView>
             )}
