@@ -6,7 +6,7 @@ import {
     Coordinates,
     Aids,
     FormulaAndWeight
-} from '../@types';
+} from '@types/index';
 
 interface SearchContextValue {
     query: string;

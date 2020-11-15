@@ -5,19 +5,20 @@ import { Atom } from '@types';
 
 interface AtomModelProps {
     name: string;
-    position: number[];
+    position?: number[];
+    scale?: number[];
     onClick: () => void;
 }
 export function AtomModel(props: AtomModelProps): JSX.Element {
-    const { name, position, onClick } = props;
+    const { name, position = [0, 0, 0], scale = [1, 1, 1], onClick } = props;
 
     return (
         <ViroSphere
             heightSegmentCount={20}
             widthSegmentCount={20}
-            radius={1}
+            radius={0.01}
             position={position}
-            scale={[0.01, 0.01, 0.01]}
+            scale={scale}
             materials={name}
             onClick={onClick}
         />

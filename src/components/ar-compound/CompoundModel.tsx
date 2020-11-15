@@ -3,10 +3,8 @@ import { ViroMaterials, ViroPolyline } from 'react-viro';
 import * as atoms from 'assets/atoms.json';
 import { Atom, CompoundData, Coordinates } from '@types';
 import { AtomModel } from './AtomModel';
-
-const NORMALIZER = 15;
-const BOND_THICKNESS = 0.005;
-const DOUBLE_BOND_OFFSET = 0.005;
+import { BondModel } from './BondModel';
+import { NORMALIZER } from '../../constants';
 
 interface Material {
     roughness?: number;
@@ -57,6 +55,10 @@ export function CompoundModel(props: CompoundModelProps): JSX.Element {
         }
     }, [compound]);
 
+    function calculateAtomScale(mass: number): number {
+        return mass < 10 ? Math.log(mass + 1) : Math.log10(mass + 1);
+    }
+
     async function generateAtomModels(): Promise<JSX.Element[]> {
         const a: JSX.Element[] = [];
         for (let i = 0; i < compound.elements.length; i++) {
@@ -73,6 +75,7 @@ export function CompoundModel(props: CompoundModelProps): JSX.Element {
                 mass: atomJSON.mass,
                 color: atomJSON.hexColor
             };
+            const scaledSize = calculateAtomScale(atom.mass);
             a.push(
                 <AtomModel
                     key={`atom_${i}_${elementNum}`}
@@ -82,6 +85,7 @@ export function CompoundModel(props: CompoundModelProps): JSX.Element {
                         coords.y / NORMALIZER,
                         coords.z / NORMALIZER - 0.25
                     ]}
+                    scale={[scaledSize, scaledSize, scaledSize]}
                     onClick={(): void => {
                         console.log('Clicked');
                         setClickedAtom(atom);
@@ -95,57 +99,25 @@ export function CompoundModel(props: CompoundModelProps): JSX.Element {
     async function generateBondModels(): Promise<JSX.Element[]> {
         const b = [];
         for (let i = 0; i < compound.aids.length; i++) {
-            const fromCoords: Coordinates =
-                compound.coords[compound.aids[i].from - 1];
-            const toCoords: Coordinates =
-                compound.coords[compound.aids[i].to - 1];
-
-            let doubleBondOffset = 0;
-            if (compound.numOfBonds[i] === 2) {
-                doubleBondOffset = DOUBLE_BOND_OFFSET;
+            const key = `bond_${i}_${compound.aids[i].from}_${compound.aids[i].to}`;
+            const isDoubleBond = compound.numOfBonds[i] === 2;
+            const aids = compound.aids;
+            const fromCoords: Coordinates = compound.coords[aids[i].from - 1];
+            const toCoords: Coordinates = compound.coords[aids[i].to - 1];
+            if (isDoubleBond) {
                 b.push(
-                    <ViroPolyline
-                        key={`bond_${i}_${compound.aids[i].from}_${compound.aids[i].to}_1`}
-                        position={[0, 0, 0]}
-                        points={[
-                            [
-                                fromCoords.x / NORMALIZER - doubleBondOffset,
-                                fromCoords.y / NORMALIZER - doubleBondOffset,
-                                fromCoords.z / NORMALIZER - 0.25
-                            ],
-                            [
-                                toCoords.x / NORMALIZER - doubleBondOffset,
-                                toCoords.y / NORMALIZER - doubleBondOffset,
-                                toCoords.z / NORMALIZER - 0.25
-                            ]
-                        ]}
-                        thickness={BOND_THICKNESS}
-                        materials={'bond'}
+                    <BondModel
+                        key={`${key}_1`}
+                        from={fromCoords}
+                        to={toCoords}
                     />
                 );
             }
-
             b.push(
-                <ViroPolyline
-                    key={`bond_${i}_${compound.aids[i].from}_${
-                        compound.aids[i].to
-                    }_${doubleBondOffset > 0 ? '2' : ''}`}
-                    position={[0, 0, 0]}
-                    points={[
-                        [
-                            fromCoords.x / NORMALIZER + doubleBondOffset,
-                            fromCoords.y / NORMALIZER + doubleBondOffset,
-                            fromCoords.z / NORMALIZER - 0.25
-                        ],
-                        [
-                            toCoords.x / NORMALIZER + doubleBondOffset,
-                            toCoords.y / NORMALIZER + doubleBondOffset,
-                            toCoords.z / NORMALIZER - 0.25
-                        ]
-                    ]}
-                    thickness={BOND_THICKNESS}
-                    materials={'bond'}
-                    ignoreEventHandling={true}
+                <BondModel
+                    key={`${key}_${isDoubleBond ? '2' : ''}`}
+                    from={fromCoords}
+                    to={toCoords}
                 />
             );
         }
