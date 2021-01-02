@@ -12,14 +12,13 @@ import {
     SearchContext
 } from './contexts/SearchContext';
 import { SearchBar } from './components/search/SearchBar';
-import { ARNavigator } from './components/ar-compound/ARNavigator';
 import { NavigationContainer } from '@react-navigation/native';
 import {
     createStackNavigator,
     StackNavigationOptions
 } from '@react-navigation/stack';
 import { Home } from './screens/Home';
-import { CompoundInfo } from './screens/CompoundInfo';
+import { ARViewer } from './screens/ARViewer';
 
 // Dismisses keyboard when pressed outside of an input field.
 interface DismissKeyboardWrapperProps {
@@ -57,8 +56,7 @@ function ScreenStack(): JSX.Element {
         <NavigationContainer>
             <Stack.Navigator screenOptions={stackHeaderOptions}>
                 <Stack.Screen name="Home" component={Home} />
-                <Stack.Screen name="CompoundInfo" component={CompoundInfo} />
-                <Stack.Screen name="ARViewer" component={ARNavigator} />
+                <Stack.Screen name="ARViewer" component={ARViewer} />
             </Stack.Navigator>
         </NavigationContainer>
     );

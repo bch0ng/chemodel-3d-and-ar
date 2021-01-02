@@ -53,11 +53,9 @@ export function TipModal(): JSX.Element {
                                 tip: ' on an atom to see more info.'
                             }
                         ]}
+                        keyExtractor={(item, _index) => item.key.toString()}
                         renderItem={({ item }) => (
-                            <Text
-                                key={item.key.toString()}
-                                style={{ fontSize: 18, paddingVertical: 2 }}
-                            >
+                            <Text style={{ fontSize: 18, paddingVertical: 2 }}>
                                 <Text style={{ fontWeight: 'bold' }}>
                                     - {item.action}
                                 </Text>

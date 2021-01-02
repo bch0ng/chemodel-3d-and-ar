@@ -5,9 +5,9 @@
     "slug": "chemodel",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/assets/chemodel_icon.png",
     "splash": {
-      "image": "./assets/chemodel_splash.png",
+      "image": "./src/assets/chemodel_splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#212121"
     },
@@ -19,17 +19,17 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.bchong.chemodel"
+      "bundleIdentifier": "me.brandonchong.chemodel"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./src/assets/chemodel_icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.bchong.chemodel"
+      "package": "me.brandonchong.chemodel"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./src/assets/chemodel_icon.png"
     }
   }
 }

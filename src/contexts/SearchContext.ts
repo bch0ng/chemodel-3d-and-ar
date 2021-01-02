@@ -15,7 +15,7 @@ interface SearchContextValue {
     suggestions: string[];
     selectSuggestion: (suggestion: string) => void;
     isLoading: boolean;
-    compound: any;
+    compound: CompoundInfo | null;
     onQuerySubmit: (manualQuery?: string) => Promise<void>;
 }
 
@@ -25,7 +25,7 @@ const initialState: SearchContextValue = {
     suggestions: [],
     selectSuggestion: () => {},
     isLoading: false,
-    compound: {},
+    compound: null,
     onQuerySubmit: async () => {}
 };
 

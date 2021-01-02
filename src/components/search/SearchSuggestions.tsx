@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ScrollView, View } from 'react-native';
+import { ScrollView, View, Keyboard } from 'react-native';
 import { useSearchContext } from '../../contexts/SearchContext';
 import * as styled from './SearchSuggestions.styles';
 import { useNavigation } from '@react-navigation/native';
@@ -15,8 +15,9 @@ function SearchSuggestion(props: SearchSuggestionProps): JSX.Element {
     return (
         <styled.SearchSuggestionItem
             onPress={(): void => {
-                navigation.navigate('CompoundInfo');
+                navigation.navigate('ARViewer');
                 selectSuggestion(suggestion);
+                Keyboard.dismiss();
             }}
         >
             <styled.SearchSuggestionText>
