@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "expo": "^37.0.12",
-    "expo-cli": "^3.20.9",
+    "expo-cli": "^6.0.8",
     "expo-graphics": "^1.1.0",
     "expo-three": "^3.0.1",
     "expokit": "^32.1.3",
